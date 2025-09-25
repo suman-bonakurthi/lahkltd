@@ -39,7 +39,6 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  // mobile menu top
   const mobileMenuTop = scrolled ? "5rem" : "7rem";
 
   return (
@@ -50,7 +49,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center h-full">
-          {/* Üst satır: logo + hamburger */}
+          {/* Logo + Hamburger */}
           <div className="flex justify-between items-center py-2 lg:py-0">
             <Link href="/" className="flex items-center">
               <div
@@ -58,7 +57,13 @@ export default function Navbar() {
                   scrolled ? "w-32 h-10 sm:w-36 sm:h-12" : "w-48 h-16 sm:w-56 sm:h-18"
                 }`}
               >
-                <Image src="/logo.jpg" alt="L&A Logo" fill  sizes="(max-width: 768px) 100vw, 50vw" className="object-contain" />
+                <Image
+                  src="/logo.jpg"
+                  alt="L&A Logo"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain"
+                />
               </div>
             </Link>
 
@@ -76,34 +81,25 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Alt satır: menü öğeleri */}
+          {/* Desktop Menu */}
           <div className="hidden lg:flex gap-4 xl:gap-6 items-center">
-            <Link
-              href="/"
-              className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base"
-            >
+            <Link href="/" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
               Home
             </Link>
-            <Link
-              href="/worldwide"
-              className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base"
-            >
+            <Link href="/worldwide" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
               Worldwide
             </Link>
-            <Link
-              href="/services"
-              className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base"
-            >
+            <Link href="/services" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
               Services
             </Link>
-            <Link
-              href="/why-us"
-              className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base"
-            >
+            <Link href="/whyus" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
               Why Us
             </Link>
+            <Link href="/about" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
+              About Us
+            </Link>
 
-            {/* Products dropdown */}
+            {/* Products Dropdown */}
             <div
               ref={dropdownRef}
               className="relative"
@@ -161,36 +157,23 @@ export default function Navbar() {
         >
           <div className="px-6 py-6">
             <nav className="flex flex-col gap-3">
-              <Link
-                href="/"
-                onClick={() => setMobileOpen(false)}
-                className="py-3 text-gray-800 font-medium border-b border-gray-100"
-              >
+              <Link href="/" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
                 Home
               </Link>
-              <Link
-                href="/worldwide"
-                onClick={() => setMobileOpen(false)}
-                className="py-3 text-gray-800 font-medium border-b border-gray-100"
-              >
+              <Link href="/worldwide" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
                 Worldwide
               </Link>
-              <Link
-                href="/services"
-                onClick={() => setMobileOpen(false)}
-                className="py-3 text-gray-800 font-medium border-b border-gray-100"
-              >
+              <Link href="/services" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
                 Services
               </Link>
-              <Link
-                href="/why-us"
-                onClick={() => setMobileOpen(false)}
-                className="py-3 text-gray-800 font-medium border-b border-gray-100"
-              >
+              <Link href="/whyus" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
                 Why Us
               </Link>
+              <Link href="/about" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
+                About Us
+              </Link>
 
-              {/* Mobile Products accordion */}
+              {/* Products Accordion */}
               <div className="pt-2">
                 <button
                   onClick={() => setMobileProductsOpen((s) => !s)}
@@ -198,9 +181,7 @@ export default function Navbar() {
                   aria-expanded={mobileProductsOpen}
                 >
                   <span>Products</span>
-                  <ChevronDown
-                    className={`w-5 h-5 transition-transform ${mobileProductsOpen ? "rotate-180" : "rotate-0"}`}
-                  />
+                  <ChevronDown className={`w-5 h-5 transition-transform ${mobileProductsOpen ? "rotate-180" : "rotate-0"}`} />
                 </button>
 
                 {mobileProductsOpen && (
