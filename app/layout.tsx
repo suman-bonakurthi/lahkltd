@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import CookieBanner from "./components/CookieBanner";
 
 // Google Fonts
 const poppins = Poppins({
@@ -40,6 +41,7 @@ export default function RootLayout({
         }}
       >
         <Navbar />
+        <CookieBanner />
         {children}
       </body>
     </html>
