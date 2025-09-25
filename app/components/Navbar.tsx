@@ -1,169 +1,232 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
-  const [openDropdown, setOpenDropdown] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileDropdown, setMobileDropdown] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false); // desktop dropdown
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false); // mobile accordion
   const [scrolled, setScrolled] = useState(false);
 
+  const products = [
+    { name: "Leathers", href: "/products/leathers" },
+    { name: "Garments", href: "/products/garments" },
+    { name: "General Goods", href: "/products/general-goods" },
+  ];
+
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  // scroll shrink
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const services = [
-    { name: "Leather", href: "/services/leather" },
-    { name: "Garments", href: "/services/garments" },
-    { name: "General Goods", href: "/services/general" },
-  ];
+  // click outside to close desktop dropdown
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (!dropdownRef.current) return;
+      if (!dropdownRef.current.contains(e.target as Node)) {
+        setProductsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  // mobile menu top
+  const mobileMenuTop = scrolled ? "5rem" : "7rem";
 
   return (
     <nav
-      className={`fixed w-full z-50 bg-white shadow transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 bg-white shadow transition-all duration-300 ${
         scrolled ? "h-20" : "h-28"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex justify-between items-center h-full">
-          {/* Logo */}
-          <Link href="/" className="flex items-center h-full">
-            <div
-              className={`relative transition-all duration-300 ${
-                scrolled ? "w-40 h-12" : "w-64 h-20"
-              }`}
-            >
-              <Image
-                src="/logo.jpg"
-                alt="Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </Link>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center h-full">
+          {/* Üst satır: logo + hamburger */}
+          <div className="flex justify-between items-center py-2 lg:py-0">
+            <Link href="/" className="flex items-center">
+              <div
+                className={`relative transition-all duration-300 ${
+                  scrolled ? "w-32 h-10 sm:w-36 sm:h-12" : "w-48 h-16 sm:w-56 sm:h-18"
+                }`}
+              >
+                <Image src="/logo.jpg" alt="L&A Logo" fill  sizes="(max-width: 768px) 100vw, 50vw" className="object-contain" />
+              </div>
+            </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-6">
+            <div className="lg:hidden">
+              <button
+                onClick={() => {
+                  setMobileOpen((s) => !s);
+                  if (mobileOpen) setMobileProductsOpen(false);
+                }}
+                aria-expanded={mobileOpen}
+                className="text-gray-800 hover:text-primary transition focus:outline-none"
+              >
+                {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+              </button>
+            </div>
+          </div>
+
+          {/* Alt satır: menü öğeleri */}
+          <div className="hidden lg:flex gap-4 xl:gap-6 items-center">
             <Link
               href="/"
-              className="text-gray-800 hover:text-primary font-medium transition"
+              className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base"
             >
               Home
             </Link>
+            <Link
+              href="/worldwide"
+              className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base"
+            >
+              Worldwide
+            </Link>
+            <Link
+              href="/services"
+              className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base"
+            >
+              Services
+            </Link>
+            <Link
+              href="/why-us"
+              className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base"
+            >
+              Why Us
+            </Link>
 
-            {/* Services Dropdown */}
-            <div className="relative">
+            {/* Products dropdown */}
+            <div
+              ref={dropdownRef}
+              className="relative"
+              onMouseEnter={() => setProductsOpen(true)}
+              onMouseLeave={() => setProductsOpen(false)}
+            >
               <button
-                onClick={() => setOpenDropdown(!openDropdown)}
-                className="flex items-center gap-1 text-gray-800 hover:text-primary font-medium transition"
+                aria-expanded={productsOpen}
+                onClick={() => setProductsOpen((s) => !s)}
+                className="flex items-center gap-1 xl:gap-2 text-gray-800 hover:text-primary font-medium transition focus:outline-none text-sm xl:text-base"
               >
-                Services <ChevronDown className="w-4 h-4" />
+                <span>Products</span>
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    productsOpen ? "rotate-180" : "rotate-0"
+                  }`}
+                />
               </button>
-              {openDropdown && (
-                <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-xl w-48 flex flex-col z-50">
-                  {services.map((service) => (
+
+              <div
+                className={`absolute left-0 mt-2 z-50 w-56 rounded-xl bg-white border border-gray-100 shadow-lg transform transition-all duration-200 ${
+                  productsOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
+                }`}
+              >
+                <div className="flex flex-col py-2">
+                  {products.map((p) => (
                     <Link
-                      key={service.name}
-                      href={service.href}
-                      className="px-4 py-2 text-gray-700 hover:bg-primary hover:text-white transition rounded-lg"
-                      onClick={() => setOpenDropdown(false)}
+                      key={p.name}
+                      href={p.href}
+                      onClick={() => setProductsOpen(false)}
+                      className="px-4 py-3 text-gray-700 hover:bg-primary hover:text-white transition text-sm"
                     >
-                      {service.name}
+                      {p.name}
                     </Link>
                   ))}
                 </div>
-              )}
+              </div>
             </div>
 
             <Link
-              href="/about"
-              className="text-gray-800 hover:text-primary font-medium transition"
-            >
-              About Us
-            </Link>
-
-            <Link
               href="/contact"
-              className="ml-4 inline-block px-5 py-2 bg-primary text-white font-medium rounded-full hover:bg-primary/80 transition"
+              className="ml-2 xl:ml-4 inline-block px-4 py-2 bg-primary text-white font-medium rounded-full hover:bg-primary/90 transition text-sm xl:text-base"
             >
               Get In Touch
             </Link>
-          </div>
-
-          {/* Hamburger */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="text-gray-800 hover:text-primary transition"
-            >
-              {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-            </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white shadow-lg border-t border-gray-100">
-          <div className="flex flex-col p-4 gap-4">
-            <Link
-              href="/"
-              className="text-gray-800 font-medium hover:text-primary transition"
-              onClick={() => setMobileOpen(false)}
-            >
-              Home
-            </Link>
-
-            {/* Mobile Services Dropdown */}
-            <div className="flex flex-col">
-              <button
-                onClick={() => setMobileDropdown(!mobileDropdown)}
-                className="flex justify-between items-center text-gray-800 font-medium hover:text-primary transition"
+        <div
+          className="lg:hidden fixed left-0 right-0 bottom-0 z-40 bg-white overflow-y-auto shadow-lg"
+          style={{ top: mobileMenuTop }}
+        >
+          <div className="px-6 py-6">
+            <nav className="flex flex-col gap-3">
+              <Link
+                href="/"
+                onClick={() => setMobileOpen(false)}
+                className="py-3 text-gray-800 font-medium border-b border-gray-100"
               >
-                Services <ChevronDown className="w-5 h-5" />
-              </button>
-              {mobileDropdown && (
-                <div className="flex flex-col mt-2 pl-4 space-y-2">
-                  {services.map((service) => (
-                    <Link
-                      key={service.name}
-                      href={service.href}
-                      className="text-gray-700 hover:text-primary transition"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+                Home
+              </Link>
+              <Link
+                href="/worldwide"
+                onClick={() => setMobileOpen(false)}
+                className="py-3 text-gray-800 font-medium border-b border-gray-100"
+              >
+                Worldwide
+              </Link>
+              <Link
+                href="/services"
+                onClick={() => setMobileOpen(false)}
+                className="py-3 text-gray-800 font-medium border-b border-gray-100"
+              >
+                Services
+              </Link>
+              <Link
+                href="/why-us"
+                onClick={() => setMobileOpen(false)}
+                className="py-3 text-gray-800 font-medium border-b border-gray-100"
+              >
+                Why Us
+              </Link>
 
-            <Link
-              href="/about"
-              className="text-gray-800 font-medium hover:text-primary transition"
-              onClick={() => setMobileOpen(false)}
-            >
-              About Us
-            </Link>
+              {/* Mobile Products accordion */}
+              <div className="pt-2">
+                <button
+                  onClick={() => setMobileProductsOpen((s) => !s)}
+                  className="w-full flex items-center justify-between py-3 text-gray-800 font-medium"
+                  aria-expanded={mobileProductsOpen}
+                >
+                  <span>Products</span>
+                  <ChevronDown
+                    className={`w-5 h-5 transition-transform ${mobileProductsOpen ? "rotate-180" : "rotate-0"}`}
+                  />
+                </button>
 
-            <Link
-              href="/contact"
-              className="inline-block px-5 py-2 bg-primary text-white font-medium rounded-full hover:bg-primary/80 transition mt-2 text-center"
-              onClick={() => setMobileOpen(false)}
-            >
-              Get In Touch
-            </Link>
+                {mobileProductsOpen && (
+                  <div className="mt-2 ml-4 flex flex-col gap-2">
+                    {products.map((p) => (
+                      <Link
+                        key={p.name}
+                        href={p.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="py-2 text-gray-700"
+                      >
+                        {p.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="mt-4 inline-block px-6 py-3 bg-primary text-white rounded-full text-center font-medium"
+              >
+                Get In Touch
+              </Link>
+            </nav>
           </div>
         </div>
       )}

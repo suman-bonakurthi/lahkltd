@@ -1,75 +1,57 @@
 "use client";
-
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <section
-      className="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/assets/hero.png')",
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
+    <section className="pt-16 relative w-full bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+          {/* Left Content */}
+          <div className="flex flex-col justify-center space-y-6 text-left">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              L&A Garment Sourcing & Manufacturing
+            </h1>
+            
+            <h2 className="text-lg sm:text-xl text-blue-600 font-medium">
+              Premium Garments, Leather Goods & Apparel Solutions for Global Brands
+            </h2>
+            
+            <p className="text-sm sm:text-base text-gray-600 max-w-lg leading-relaxed">
+              We specialize in high-quality garment manufacturing, leather products, and general goods sourcing delivering reliable, scalable, and cost-effective solutions for fashion brands worldwide. With a commitment to quality, ethical production, and timely delivery, L&A is your trusted global sourcing partner for apparel and lifestyle products.
+            </p>
+            
+            <div className="pt-4">
+              <Link
+                href="/contact"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium text-base transition-colors duration-300"
+              >
+                Let Us Build Your Solution
+              </Link>
+            </div>
+          </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 animate-fade-in-down">
-          L&A Sourcing & Manufacturing Services
-        </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-10 max-w-3xl animate-fade-in-up">
-          High-quality garments, leathers, and general goods for brands worldwide. Reliable, capable, responsive — your one-stop global partner.
-        </p>
-
-        <div className="flex flex-col sm:flex-row justify-center gap-6 animate-fade-in-up">
-          <Link
-            href="/contact"
-            className="bg-primary hover:bg-primary/80 text-white px-10 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 w-full sm:w-auto text-center"
-          >
-            Get in Touch
-          </Link>
-          <Link
-            href="/services"
-            className="border-2 border-white text-white hover:bg-white hover:text-primary px-10 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 w-full sm:w-auto text-center"
-          >
-            Our Services
-          </Link>
+          {/* Right Image - Circular Design */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px]">
+              {/* Circular background */}
+              <div className="absolute  rounded-full"></div>
+              
+              {/* Main circular image container */}
+              <div className="absolute top-8 left-8 right-8 bottom-8 rounded-full overflow-hidden">
+                <Image
+                  src="/assets/hero.png"
+                  alt="L&A Garment Manufacturing"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Animations */}
-      <style jsx>{`
-        .animate-fade-in-down {
-          animation: fadeInDown 1s ease forwards;
-        }
-        .animate-fade-in-up {
-          animation: fadeInUp 1s ease forwards;
-        }
-        @keyframes fadeInDown {
-          0% {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
-};
-
-export default Hero;
+}
