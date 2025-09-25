@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 // Google Fonts
 const poppins = Poppins({
@@ -38,6 +39,7 @@ export default function RootLayout({
             "var(--font-poppins), var(--font-geist-sans), var(--font-geist-mono), sans-serif",
         }}
       >
+        <Navbar />
         {children}
       </body>
     </html>

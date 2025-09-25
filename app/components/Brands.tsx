@@ -24,7 +24,7 @@ const Brands = () => {
 
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
-          spaceBetween={10} 
+          spaceBetween={10}
           slidesPerView={2}
           loop={true}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -39,15 +39,14 @@ const Brands = () => {
         >
           {logos.map((logo, index) => (
             <SwiperSlide key={index} className="flex justify-center items-center">
-              <div className="w-24 h-24 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+              <div className="relative w-24 h-24 flex items-center justify-center hover:scale-110 transition-transform duration-300">
                 <Image
                   src={logo}
                   alt={`Brand ${index + 1}`}
-                  width={96}
-                  height={96}
-                  style={{ width: "auto", height: "auto" }} 
+                  fill           
                   className="object-contain"
-                  priority
+                  sizes="96px"   
+                 
                 />
               </div>
             </SwiperSlide>

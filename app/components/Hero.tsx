@@ -44,6 +44,10 @@ export default function Hero() {
                   src="/assets/hero.png"
                   alt="L&A Garment Manufacturing"
                   fill
+                   sizes="(max-width: 640px) 300px,
+         (max-width: 768px) 400px,
+         (max-width: 1024px) 500px,
+         600px"
                   className="object-cover"
                   priority
                 />
