@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useRef } from 'react';
+import Image from 'next/image';
 import { Lightbulb, Package, Factory } from 'lucide-react';
 
 const ServicesSection = () => {
@@ -14,7 +15,10 @@ const ServicesSection = () => {
 
   const handleClick = (id: string) => {
     setActiveSection(id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Sadece içerik scroll ediyor
+    if (contentRef.current) {
+      contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const renderContent = () => {
@@ -69,19 +73,26 @@ const ServicesSection = () => {
               </p>
               <p>
                 Our extensive product range includes a wide variety of fabrics such as knits, wovens, denims, jacquards, leathers, PU fabrics,
-                and sustainable organic materials like bamboo, banana fiber, and other innovative fabrics that align with current market trends. Additionally, we provide a versatile selection of fabric-printed and paper-printed labels, embroidered woven labels, as well as laser-cut and printed designs on wooden surfaces.
+                and sustainable organic materials like bamboo, banana fiber, and other innovative fabrics that align with current market trends.
+                Additionally, we provide a versatile selection of fabric-printed and paper-printed labels, embroidered woven labels,
+                as well as laser-cut and printed designs on wooden surfaces.
               </p>
               <p>
-                We also supply all kinds of accessories for garments and leather goods, including PU and leather belts, satin and polyester woven labels, paperboard labels, appliqués, heat transfers, hang tags, and more.
+                We also supply all kinds of accessories for garments and leather goods, including PU and leather belts,
+                satin and polyester woven labels, paperboard labels, appliqués, heat transfers, hang tags, and more.
               </p>
               <p>
-                Our hardware collection features an extensive array of metal accessories, including metal buttons, eyelets, rivets, zipper sliders and pullers, snaps, hooks and bars, buckles, and metal loops, available in various finishes, shapes, sizes, and colors. We also offer plastic buttons, shell buttons, and wooden buttons designed to meet diverse stylistic and functional needs.
+                Our hardware collection features an extensive array of metal accessories, including metal buttons, eyelets, rivets,
+                zipper sliders and pullers, snaps, hooks and bars, buckles, and metal loops, available in various finishes, shapes, sizes, and colors.
+                We also offer plastic buttons, shell buttons, and wooden buttons designed to meet diverse stylistic and functional needs.
               </p>
               <p>
-                Moreover, we provide customization services such as screen printing, laser cutting, and logo engraving on buttons and metal accessories, ensuring your products are unique and perfectly aligned with your brand identity.
+                Moreover, we provide customization services such as screen printing, laser cutting, and logo engraving on buttons and metal accessories,
+                ensuring your products are unique and perfectly aligned with your brand identity.
               </p>
               <p>
-                Our dedicated Quality Assurance team rigorously inspects all sourced materials and accessories to ensure they meet the highest standards of durability, consistency, and compliance with buyer specifications. We work closely with suppliers to maintain strict quality control throughout the sourcing process.
+                Our dedicated Quality Assurance team rigorously inspects all sourced materials and accessories to ensure they meet the highest standards of durability,
+                consistency, and compliance with buyer specifications. We work closely with suppliers to maintain strict quality control throughout the sourcing process.
               </p>
               <p>
                 With efficient project management and clear communication, we ensure timely delivery and competitive lead times, helping you meet your production schedules without compromising quality.
@@ -102,14 +113,17 @@ const ServicesSection = () => {
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                L&amp;A is proudly associated with state-of-the-art garment manufacturing companies in Vietnam,
+                L&A is proudly associated with state-of-the-art garment manufacturing companies in Vietnam,
                 specializing in the production of a wide range of apparel for men, women, and children. Our partner factories hold certifications and comply with internationally recognized standards such as WRAP, BSCI, SMETA, and Better Work, ensuring ethical practices and responsible manufacturing.
               </p>
               <p>
-                Our dedicated Quality Assurance Department plays a critical role in continuously monitoring and controlling product quality as well as social compliance. Quality control measures include fabric inspection, in-line and final product inspections, fit testing, and strict adherence to buyer specifications. On the social compliance side, we conduct regular factory audits, worker welfare assessments, and environmental impact evaluations to ensure safe and fair working conditions.
+                Our dedicated Quality Assurance Department plays a critical role in continuously monitoring and controlling product quality as well as social compliance.
+                Quality control measures include fabric inspection, in-line and final product inspections, fit testing, and strict adherence to buyer specifications.
+                On the social compliance side, we conduct regular factory audits, worker welfare assessments, and environmental impact evaluations to ensure safe and fair working conditions.
               </p>
               <p>
-                By collaborating closely with our suppliers, we systematically enhance their quality management systems and ensure all production processes meet industry best practices. This commitment guarantees superior garment quality, ethical labor conditions, and a reliable, transparent supply chain.
+                By collaborating closely with our suppliers, we systematically enhance their quality management systems and ensure all production processes meet industry best practices.
+                This commitment guarantees superior garment quality, ethical labor conditions, and a reliable, transparent supply chain.
               </p>
             </div>
           </div>
@@ -121,35 +135,66 @@ const ServicesSection = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 bg-white">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row">
-       
-        <div className="md:w-80 md:h-screen border-b md:border-b-0 md:border-r border-gray-200 p-4 md:p-8 sticky md:top-24 bg-white z-10">
-         
-          <nav className="flex flex-col gap-2">
-            {navigationItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleClick(item.id)}
-                  className={`w-full flex items-center gap-3 cursor-pointer text-left px-4 py-3 text-sm font-medium transition-colors ${
-                    activeSection === item.id
-                      ? 'text-primary border-l-4 border-primary'
-                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                  }`}
-                >
-                  <Icon className="w-5 h-5" />
-                  {item.label}
-                </button>
-              );
-            })}
-          </nav>
+    <div className="bg-white pt-24">
+      {/* Hero section */}
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 flex flex-col md:flex-row items-center gap-8">
+        {/* Left content */}
+        <div className="md:w-1/2 space-y-6">
+          <h1 className="text-[28px] sm:text-4xl font-bold text-black">
+            Custom Apparel Sourcing Solutions
+          </h1>
+          <p className="text-gray-700 text-lg sm:text-xl">
+            Bespoke sourcing and production strategies, tailored to meet your exact garment and apparel requirements.
+          </p>
+          <button className="cursor-pointer bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-dark transition">
+            Discuss Your Requirements
+          </button>
         </div>
+        {/* Right image */}
+        <div className="md:w-1/2">
+          <Image
+            src="/assets/services.png"
+            alt="Apparel Sourcing"
+            width={600}
+            height={400}
+            className="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </section>
 
-        {/* Sağ İçerik */}
-        <div ref={contentRef} className="flex-1 p-4 md:p-8 overflow-y-auto">
-          {renderContent()}
+      {/* ServicesSection */}
+      <div className="min-h-screen pt-12">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row">
+          {/* Left navigation */}
+          <div className="md:w-80 md:h-screen border-b md:border-b-0 md:border-r border-gray-200 p-4 md:p-8 sticky md:top-24 bg-white z-10">
+            <nav className="flex flex-col gap-2">
+              {navigationItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => handleClick(item.id)}
+                    className={`w-full flex items-center gap-3 cursor-pointer text-left px-4 py-3 text-sm font-medium transition-colors ${
+                      activeSection === item.id
+                        ? 'text-primary border-l-4 border-primary'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    }`}
+                  >
+                    <Icon className="w-5 h-5" />
+                    {item.label}
+                  </button>
+                );
+              })}
+            </nav>
+          </div>
+
+          {/* Right content */}
+          <div
+            ref={contentRef}
+            className="flex-1 p-4 md:p-8 overflow-y-auto max-h-screen"
+          >
+            {renderContent()}
+          </div>
         </div>
       </div>
     </div>
