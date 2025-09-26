@@ -146,7 +146,7 @@ const ServicesSection = () => {
           <p className="text-gray-700 text-lg sm:text-xl">
             Bespoke sourcing and production strategies, tailored to meet your exact garment and apparel requirements.
           </p>
-          <button className="cursor-pointer bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-dark transition">
+          <button className="cursor-pointer bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-full hover:bg-primary-dark transition">
             Discuss Your Requirements
           </button>
         </div>

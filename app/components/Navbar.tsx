@@ -141,7 +141,7 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className="ml-2 xl:ml-4 inline-block px-4 py-2 bg-primary text-white font-medium rounded-full hover:bg-primary/90 transition text-sm xl:text-base"
+              className="ml-2 xl:ml-4 inline-block px-4 py-2 bg-primary text-white font-medium rounded-full hover:bg-blue-700 transition text-sm xl:text-base"
             >
               Get In Touch
             </Link>
