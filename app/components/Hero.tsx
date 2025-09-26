@@ -28,7 +28,7 @@ export default function Hero() {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
-                href="/demo"
+                href="/contact"
                 className="inline-flex items-center justify-center bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-full font-medium text-base transition-colors duration-300"
               >
                  Let Us Build Your Solution

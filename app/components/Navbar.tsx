@@ -1,42 +1,19 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false); // desktop dropdown
-  const [mobileProductsOpen, setMobileProductsOpen] = useState(false); // mobile accordion
   const [scrolled, setScrolled] = useState(false);
 
-  const products = [
-    { name: "Leathers", href: "/products/leathers" },
-    { name: "Garments", href: "/products/garments" },
-    { name: "General Goods", href: "/products/general-goods" },
-  ];
-
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
-
-  // scroll shrink
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // click outside to close desktop dropdown
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (!dropdownRef.current) return;
-      if (!dropdownRef.current.contains(e.target as Node)) {
-        setProductsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
   }, []);
 
   const mobileMenuTop = scrolled ? "5rem" : "7rem";
@@ -69,10 +46,7 @@ export default function Navbar() {
 
             <div className="lg:hidden">
               <button
-                onClick={() => {
-                  setMobileOpen((s) => !s);
-                  if (mobileOpen) setMobileProductsOpen(false);
-                }}
+                onClick={() => setMobileOpen((s) => !s)}
                 aria-expanded={mobileOpen}
                 className="text-gray-800 hover:text-primary transition focus:outline-none"
               >
@@ -99,45 +73,13 @@ export default function Navbar() {
               About Us
             </Link>
 
-            {/* Products Dropdown */}
-            <div
-              ref={dropdownRef}
-              className="relative"
-              onMouseEnter={() => setProductsOpen(true)}
-              onMouseLeave={() => setProductsOpen(false)}
+            {/* Products link */}
+            <Link
+              href="/products"
+              className="text-gray-800 font-medium text-sm xl:text-base hover:text-primary transition"
             >
-              <button
-                aria-expanded={productsOpen}
-                onClick={() => setProductsOpen((s) => !s)}
-                className="flex items-center gap-1 xl:gap-2 text-gray-800 hover:text-primary font-medium transition focus:outline-none text-sm xl:text-base"
-              >
-                <span>Products</span>
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    productsOpen ? "rotate-180" : "rotate-0"
-                  }`}
-                />
-              </button>
-
-              <div
-                className={`absolute left-0 mt-2 z-50 w-56 rounded-xl bg-white border border-gray-100 shadow-lg transform transition-all duration-200 ${
-                  productsOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
-                }`}
-              >
-                <div className="flex flex-col py-2">
-                  {products.map((p) => (
-                    <Link
-                      key={p.name}
-                      href={p.href}
-                      onClick={() => setProductsOpen(false)}
-                      className="px-4 py-3 text-gray-700 hover:bg-primary hover:text-white transition text-sm"
-                    >
-                      {p.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
+              Products
+            </Link>
 
             <Link
               href="/contact"
@@ -173,32 +115,14 @@ export default function Navbar() {
                 About Us
               </Link>
 
-              {/* Products Accordion */}
-              <div className="pt-2">
-                <button
-                  onClick={() => setMobileProductsOpen((s) => !s)}
-                  className="w-full flex items-center justify-between py-3 text-gray-800 font-medium"
-                  aria-expanded={mobileProductsOpen}
-                >
-                  <span>Products</span>
-                  <ChevronDown className={`w-5 h-5 transition-transform ${mobileProductsOpen ? "rotate-180" : "rotate-0"}`} />
-                </button>
-
-                {mobileProductsOpen && (
-                  <div className="mt-2 ml-4 flex flex-col gap-2">
-                    {products.map((p) => (
-                      <Link
-                        key={p.name}
-                        href={p.href}
-                        onClick={() => setMobileOpen(false)}
-                        className="py-2 text-gray-700"
-                      >
-                        {p.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              {/* Products link */}
+              <Link
+                href="/products"
+                onClick={() => setMobileOpen(false)}
+                className="py-3 text-gray-800 font-medium border-b border-gray-100 hover:text-primary transition"
+              >
+                Products
+              </Link>
 
               <Link
                 href="/contact"
