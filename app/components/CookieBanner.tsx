@@ -19,16 +19,21 @@ export default function CookieBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-full max-w-2xl bg-gray-900 text-white p-4 rounded-lg shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4 z-50">
-      <p className="text-sm sm:text-base">
-        We use cookies to improve your experience on our site. By using our site, you agree to our cookie policy.
-      </p>
-      <button
-        onClick={handleAccept}
-        className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-md text-sm sm:text-base"
-      >
-        Accept
-      </button>
+    <div className="fixed bottom-0 left-0 w-full bg-gray-800/80 backdrop-blur-sm text-white p-4 shadow-lg z-50">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-sm sm:text-base text-white flex-1">
+          We use cookies to improve your experience. By using our site, you agree to our{" "}
+          <a href="/privacy-policy" className="underline font-medium text-primary">
+            Privacy Policy
+          </a>.
+        </p>
+        <button
+          onClick={handleAccept}
+          className="bg-primary text-white font-medium px-4 py-2 rounded-full text-sm sm:text-base hover:bg-primary-dark transition"
+        >
+          Accept
+        </button>
+      </div>
     </div>
   );
 }
