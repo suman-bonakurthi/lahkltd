@@ -135,7 +135,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <div className="bg-white pt-24">
+    <div className="pt-0 sm:pt-8">
       {/* Hero section */}
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 flex flex-col md:flex-row items-center gap-8">
         {/* Left content */}

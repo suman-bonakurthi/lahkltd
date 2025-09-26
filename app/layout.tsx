@@ -3,12 +3,14 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import CookieBanner from "./components/CookieBanner";
+import AutoBreadcrumb from "./components/AutoBreadcrumb";
+import Footer from "./components/Footer";
 
 // Google Fonts
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // istediğin ağırlıklar
+  weight: ["400", "500", "600", "700"],
 });
 
 const geistSans = Geist({
@@ -42,7 +44,15 @@ export default function RootLayout({
       >
         <Navbar />
         <CookieBanner />
+
+        {/* Breadcrumb  */}
+        <div className="max-w-6xl mx-auto px-4">
+          <AutoBreadcrumb />
+          
+        </div>
+
         {children}
+        <Footer/>
       </body>
     </html>
   );

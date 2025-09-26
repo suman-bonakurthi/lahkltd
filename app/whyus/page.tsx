@@ -32,10 +32,10 @@ const whyUsItems = [
 
 export default function WhyUsPage() {
   return (
-    <section className="pt-32 pb-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="pt-8 pb-20">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-          Why Choose Us
+        <h1 className="text-[28px] sm:text-4xl font-bold text-gray-900 mb-4">
+          Why Us
         </h1>
         <div className="w-24 h-1 bg-primary mx-auto mb-6 rounded-full"></div>
         <p className="text-gray-600 mb-14 max-w-2xl mx-auto text-lg">
