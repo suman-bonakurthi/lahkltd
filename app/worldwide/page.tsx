@@ -81,9 +81,9 @@ const WorldwidePresence = () => {
           <h2 className="text-2xl font-semibold text-gray-900 mb-8">Where We Operate</h2>
 
           {/* World Map Container */}
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 mb-12">
+          <div className="bg-white  border border-gray-100 p-8 mb-12">
             <div className="relative w-full max-w-5xl mx-auto">
-              <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden">
+              <div className="relative w-full aspect-[2/1] overflow-hidden">
                 <Image
                   src="/assets/worldwide.png"
                   alt="World Map showing L&amp;A global presence"
@@ -106,11 +106,12 @@ const WorldwidePresence = () => {
                     onMouseLeave={() => setActiveCountry(null)}
                   >
                     <div className="relative">
-                      <div className="w-3 h-3 bg-primary rounded-full border-2 border-white shadow-lg"></div>
+                      {/* responsive marker boyutu */}
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-primary rounded-full border-2 border-white shadow-lg"></div>
 
                       {activeCountry?.name === country.name && (
                         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20">
-                          <div className="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg whitespace-nowrap">
+                          <div className="bg-gray-900 text-white px-4 py-2 text-sm font-medium shadow-lg whitespace-nowrap">
                             {country.name}
                           </div>
                         </div>
@@ -123,7 +124,7 @@ const WorldwidePresence = () => {
 
             {/* Legend */}
             <div className="flex items-center justify-center mt-6 gap-3">
-              <div className="w-3 h-3 bg-primary rounded-full"></div>
+              <div className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-primary rounded-full"></div>
               <span className="text-sm text-gray-600 font-medium">L&amp;A Global Presence</span>
               <span className="text-gray-300">•</span>
               <span className="text-sm text-gray-500">{countries.length} Countries</span>
@@ -136,10 +137,10 @@ const WorldwidePresence = () => {
           {countries.map((country) => (
             <div
               key={country.name}
-              className="bg-white rounded-3xl shadow-sm hover:shadow-xl border border-gray-100 p-8 text-left transform hover:-translate-y-1 transition-all duration-300"
+              className="shadow-sm hover:shadow-xl border border-gray-100 p-8 text-left transform hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 flex items-center justify-center rounded-2xl bg-primary/10 text-primary mr-3">
+                <div className="w-12 h-12 flex items-center justify-center  text-primary mr-3">
                   <div className="w-3 h-3 bg-primary rounded-full"></div>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900">{country.name}</h3>
@@ -161,10 +162,10 @@ const WorldwidePresence = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl shadow-sm hover:shadow-xl border border-gray-100 p-8 text-left transform hover:-translate-y-1 transition-all duration-300"
+                  className=" shadow-sm hover:shadow-xl border border-gray-100 p-8 text-left transform hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 flex items-center justify-center rounded-2xl bg-primary/10 text-primary mr-3">
+                    <div className="w-12 h-12 flex items-center justify-center  text-primary mr-3">
                       <Icon className="w-6 h-6" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900">{benefit.title}</h3>
