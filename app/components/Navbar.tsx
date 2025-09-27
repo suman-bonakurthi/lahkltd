@@ -66,10 +66,10 @@ export default function Navbar() {
             <Link href="/services" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
               Services
             </Link>
-            <Link href="/whyus" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
+            <Link href="/why-us" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
               Why Us
             </Link>
-            <Link href="/about" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
+            <Link href="/about-us" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
               About Us
             </Link>
 
@@ -81,12 +81,13 @@ export default function Navbar() {
               Products
             </Link>
 
-            <Link
-              href="/contact"
-              className="ml-2 xl:ml-4 inline-block px-4 py-2 bg-primary text-white font-medium rounded-full hover:bg-blue-700 transition text-sm xl:text-base"
-            >
-              Get In Touch
-            </Link>
+           <Link
+  href="/contact-us"
+  className="group relative inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-none font-medium text-sm xl:text-base transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
+>
+  <span className="relative z-10">Get In Touch</span>
+  <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+</Link>
           </div>
         </div>
       </div>
@@ -108,10 +109,10 @@ export default function Navbar() {
               <Link href="/services" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
                 Services
               </Link>
-              <Link href="/whyus" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
+              <Link href="/why-us" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
                 Why Us
               </Link>
-              <Link href="/about" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
+              <Link href="/about-us" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
                 About Us
               </Link>
 
@@ -125,12 +126,13 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="mt-4 inline-block px-6 py-3 bg-primary text-white rounded-full text-center font-medium"
-              >
-                Get In Touch
-              </Link>
+  href="/contact-us"
+  onClick={() => setMobileOpen(false)}
+  className="group relative inline-flex items-center justify-center bg-primary text-white w-full px-6 py-3 rounded-none font-medium text-base transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden mt-4"
+>
+  <span className="relative z-10">Get In Touch</span>
+  <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+</Link>
             </nav>
           </div>
         </div>

@@ -20,7 +20,7 @@ const Footer = () => {
             />
           </Link>
          
-          <p className="text-xs text-gray-500 mt-2">© 2025 L&H Garments. All rights reserved.</p>
+          <p className="text-xs text-gray-500 mt-2">© 2025 L&A Garments. All rights reserved.</p>
         </div>
 
         {/* Services */}

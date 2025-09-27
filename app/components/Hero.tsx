@@ -5,69 +5,155 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="pt-32 relative w-full bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+    <section className="pt-12 relative w-full bg-white min-h-screen overflow-hidden">
+      {/* Subtle dot pattern background */}
+      <div className="absolute inset-0 opacity-30">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgb(148 163 184) 1px, transparent 0)`,
+            backgroundSize: "24px 24px",
+          }}
+        ></div>
+      </div>
+
+      {/* Floating geometric elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 border border-slate-200 rounded-full opacity-20"></div>
+      <div className="absolute top-40 right-20 w-24 h-24 bg-slate-100 rounded-lg rotate-45 opacity-30"></div>
+      <div className="absolute bottom-40 left-20 w-16 h-16 border-2 border-slate-300 rotate-12 opacity-25"></div>
+      <div className="absolute top-60 left-1/3 w-8 h-8 bg-slate-200 rounded-full opacity-40"></div>
+      <div className="absolute bottom-60 right-1/3 w-12 h-12 border border-slate-300 rounded-full opacity-30"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-screen py-20">
           {/* Left Content */}
-          <div className="flex flex-col justify-center space-y-6 text-left">
-            {/* Small title */}
-            <p className="text-sm text-gray-500 uppercase tracking-widest font-medium">
-              Premium Garments, Leather Goods & Apparel Solutions for Global Brands
-            </p>
-            
-            {/* Main heading */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-              L&A Garment Sourcing & Manufacturing
-            </h1>
-            
+          <div className="flex flex-col justify-center space-y-10 text-left order-1 lg:order-1">
+            {/* Badge */}
+            <div className="inline-flex items-center">
+              <div className="flex items-center bg-slate-50 border border-slate-200 rounded-full px-6 py-3 shadow-sm">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3 animate-pulse"></div>
+                <span className="text-sm text-slate-700 font-medium tracking-wide uppercase">
+                  Premium Garments, Leather Goods & Apparel Solutions
+                </span>
+              </div>
+            </div>
+
+            {/* Main heading with emphasis */}
+            <div className="space-y-4">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 leading-[0.9] tracking-tight">
+                L&A Garment
+                <span className="block text-slate-700 font-light italic">Sourcing &</span>
+                <span className="block relative">
+                  Manufacturing
+                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-slate-900 rounded-full transform -rotate-1"></div>
+                </span>
+              </h1>
+            </div>
+
             {/* Description */}
-            <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
-              We specialize in high-quality garment manufacturing, leather products, and general goods sourcing delivering reliable, scalable, and cost-effective solutions for fashion brands worldwide. With a commitment to quality, ethical production, and timely delivery, L&A is your trusted global sourcing partner for apparel and lifestyle products.
+            <p className="text-xl text-slate-600 max-w-xl leading-relaxed font-light">
+              We specialize in high-quality garment manufacturing, leather products, and
+              general goods sourcing delivering reliable, scalable, and cost-effective
+              solutions for fashion brands worldwide. With a commitment to quality, ethical
+              production, and timely delivery, L&A is your trusted global sourcing partner
+              for apparel and lifestyle products.
             </p>
-            
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-full font-medium text-base transition-colors duration-300"
-              >
-                 Let Us Build Your Solution
-              </Link>
+
+            {/* Trust indicators */}
+            <div className="flex items-center space-x-8 py-4">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-slate-900">500+</div>
+                <div className="text-sm text-slate-600 uppercase tracking-wide">Global Brands</div>
+              </div>
+              <div className="w-px h-12 bg-slate-300"></div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-slate-900">15+</div>
+                <div className="text-sm text-slate-600 uppercase tracking-wide">Years Experience</div>
+              </div>
+              <div className="w-px h-12 bg-slate-300"></div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-slate-900">ISO</div>
+                <div className="text-sm text-slate-600 uppercase tracking-wide">Certified</div>
+              </div>
             </div>
           </div>
 
-          {/* Right Image - Perfect Circular Design */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] md:w-[550px] md:h-[550px] lg:w-[600px] lg:h-[600px]">
-              {/* Outer circle background */}
-              
-              {/* Inner perfect circle for image */}
-              <div className="absolute inset-4 rounded-full overflow-hidden bg-white shadow-2xl">
-                <div className="relative w-full h-full rounded-full overflow-hidden">
-                  <Image
-                    src="/assets/hero.png"
-                    alt="L&A Garment Manufacturing"
-                    fill
-                    sizes="(max-width: 640px) 342px, (max-width: 768px) 442px, (max-width: 1024px) 542px, 592px"
-                    style={{
-                      objectFit: 'cover',
-                      objectPosition: 'center',
-                      minWidth: '100%',
-                      minHeight: '100%'
-                    }}
-                    className="rounded-full"
-                    priority
-                  />
+          {/* Right Image */}
+          <div className="flex justify-center lg:justify-end relative order-2 lg:order-2">
+            {/* Background decoration */}
+            <div className="absolute -top-8 -right-8 w-full h-full border-2 border-slate-200 rounded-lg -z-10 transform rotate-3"></div>
+            <div className="absolute -bottom-8 -left-8 w-full h-full bg-slate-50 rounded-lg -z-20 transform -rotate-2"></div>
+
+            {/* Main image container */}
+            <div className="relative w-[350px] sm:w-[450px] md:w-[550px] lg:w-[600px] aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
+              <Image
+                src="/assets/hero.png"
+                alt="L&A Garment Manufacturing - Premium Quality Production"
+                fill
+                sizes="(max-width: 640px) 350px, (max-width: 768px) 450px, (max-width: 1024px) 550px, 600px"
+                className="object-cover hover:scale-105 transition-transform duration-700"
+                priority
+              />
+
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+
+              {/* Quality badge overlay */}
+              <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-lg px-4 py-3 shadow-lg">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
+                  <span className="text-sm font-semibold text-slate-900">Quality Certified</span>
                 </div>
+                <p className="text-xs text-slate-600 mt-1">Ethical Production Standards</p>
               </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full opacity-80"></div>
-              <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-purple-400 rounded-full opacity-60"></div>
-              <div className="absolute top-1/4 -left-8 w-6 h-6 bg-pink-400 rounded-full opacity-70"></div>
             </div>
           </div>
+
+          {/* CTA Buttons – mobilde resmin ALTINA taşındı */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-6 order-3 lg:col-span-2">
+            <Link
+              href="/contact-us"
+              className="group relative inline-flex items-center justify-center bg-primary hover:bg-blue-700 text-white px-10 py-5 rounded-none font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
+            >
+              <span className="relative z-10">Let Us Build Your Solution</span>
+              <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            </Link>
+
+            <Link
+              href="/products"
+              className="inline-flex items-center justify-center border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white px-10 py-5 rounded-none font-semibold text-lg transition-all duration-300"
+            >
+              View Our Work
+              <svg
+                className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </Link>
+          </div>
         </div>
+      </div>
+
+      {/* Bottom wave separator */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          className="relative block w-full h-8"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M1200 120L0 120 0 80Q600 40 1200 80z"
+            className="fill-slate-50"
+          ></path>
+        </svg>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Lightbulb, Package, Factory } from 'lucide-react';
 
 const ServicesSection = () => {
@@ -15,7 +16,6 @@ const ServicesSection = () => {
 
   const handleClick = (id: string) => {
     setActiveSection(id);
-    // Sadece içerik scroll ediyor
     if (contentRef.current) {
       contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -113,7 +113,7 @@ const ServicesSection = () => {
             </h2>
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p>
-                L&A is proudly associated with state-of-the-art garment manufacturing companies in Vietnam,
+                L&amp;A is proudly associated with state-of-the-art garment manufacturing companies in Vietnam,
                 specializing in the production of a wide range of apparel for men, women, and children. Our partner factories hold certifications and comply with internationally recognized standards such as WRAP, BSCI, SMETA, and Better Work, ensuring ethical practices and responsible manufacturing.
               </p>
               <p>
@@ -146,10 +146,17 @@ const ServicesSection = () => {
           <p className="text-gray-700 text-lg sm:text-xl">
             Bespoke sourcing and production strategies, tailored to meet your exact garment and apparel requirements.
           </p>
-          <button className="cursor-pointer bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-full hover:bg-primary-dark transition">
-            Discuss Your Requirements
-          </button>
+
+          {/* Link button */}
+          <Link
+            href="/contact-us"
+            className="group relative inline-flex items-center justify-center bg-primary text-white px-6 py-3  font-medium text-base transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
+          >
+            <span className="relative z-10">Discuss Your Requirements</span>
+            <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+          </Link>
         </div>
+
         {/* Right image */}
         <div className="md:w-1/2">
           <Image
