@@ -5,7 +5,7 @@ import { House, ChevronRight } from 'lucide-react';
 
 export default function AutoBreadcrumb() {
   const pathname = usePathname();
-  if (pathname === '/') return null; // anasayfada hiç gösterme
+  if (pathname === '/') return null; // Hide on homepage
 
   const segments = pathname.split('/').filter(Boolean);
   const crumbs = segments.map((seg, idx) => {
@@ -14,26 +14,26 @@ export default function AutoBreadcrumb() {
   });
 
   return (
-    <nav className="pt-32 text-sm my-4" aria-label="Breadcrumb">
-      <ol className="flex items-center space-x-1">
+    <nav className="pt-32 pb-4" aria-label="Breadcrumb">
+      <ol className="flex items-center space-x-1 text-sm">
         <li className="flex items-center">
-          <Link href="/" className="flex items-center text-gray-700 hover:text-blue-600">
-            <House size={18} className="mr-1 text-gray-600 hover:text-[#0058EE]" />
+          <Link href="/" className="flex items-center text-gray-700 hover:text-primary transition-colors">
+            <House size={18} className="mr-1 text-gray-600 hover:text-primary" />
           </Link>
         </li>
 
         {crumbs.map((crumb, idx) => (
           <li key={idx} className="flex items-center">
-            <ChevronRight size={14} className="text-gray-400 mx-1" />
+            <ChevronRight size={14} className="text-gray-400" />
             {idx < crumbs.length - 1 ? (
               <Link
                 href={crumb.href}
-                className="capitalize text-gray-700 hover:text-blue-600"
+                className="capitalize text-gray-700 hover:text-primary transition-colors ml-1"
               >
                 {crumb.label}
               </Link>
             ) : (
-              <span className="capitalize text-blue-600 font-medium">{crumb.label}</span>
+              <span className="capitalize text-primary font-medium ml-1">{crumb.label}</span>
             )}
           </li>
         ))}
