@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="pt-12 relative w-full bg-white min-h-screen overflow-hidden">
+    <section className="pt-12 relative w-full  min-h-screen overflow-hidden">
       {/* Subtle dot pattern background */}
       <div className="absolute inset-0 opacity-30">
         <div
@@ -30,7 +30,7 @@ export default function Hero() {
           <div className="flex flex-col justify-center space-y-10 text-left order-1 lg:order-1">
             {/* Badge */}
             <div className="inline-flex items-center">
-              <div className="flex items-center bg-slate-50 border border-slate-200 rounded-full px-6 py-3 shadow-sm">
+              <div className="flex items-center bg-slate-50 border border-slate-200  px-6 py-3 shadow-sm">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3 animate-pulse"></div>
                 <span className="text-sm text-slate-700 font-medium tracking-wide uppercase">
                   Premium Garments, Leather Goods & Apparel Solutions
@@ -99,7 +99,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
 
               {/* Quality badge overlay */}
-              <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-lg px-4 py-3 shadow-lg">
+              <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-3 shadow-lg">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
                   <span className="text-sm font-semibold text-slate-900">Quality Certified</span>
@@ -143,18 +143,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom wave separator */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-        <svg
-          className="relative block w-full h-8"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M1200 120L0 120 0 80Q600 40 1200 80z"
-            className="fill-slate-50"
-          ></path>
-        </svg>
-      </div>
+     
     </section>
   );
 }

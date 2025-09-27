@@ -44,7 +44,7 @@ const solutions = [
 
 const Solutions = () => {
   return (
-    <section className="py-16">
+    <section className="py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 text-center">
@@ -61,7 +61,7 @@ const Solutions = () => {
           {solutions.map((sol, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl shadow-md p-6 flex flex-col items-start hover:shadow-xl transition-shadow duration-300"
+              className="shadow-md p-6 flex flex-col items-start hover:shadow-xl transition-shadow duration-300"
             >
               {/* Small icon top-left */}
               <div className="w-20 h-20 relative mb-4">

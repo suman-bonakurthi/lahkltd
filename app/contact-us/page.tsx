@@ -53,7 +53,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen pt-8">
       {/* Header */}
-      <div className="max-w-7xl mx-auto bg-[#0A3176] text-white py-12 sm:py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#0A3176] text-white py-12 sm:py-16">
         <div className="px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">Contact</h1>
         </div>
@@ -61,7 +61,7 @@ export default function ContactPage() {
 
       {/* Content Section */}
       <div className="bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left Column */}
             <div className="flex flex-col h-full space-y-8">
@@ -104,7 +104,7 @@ export default function ContactPage() {
                       type="text"
                       name="fullName"
                       id="fullName"
-                      className="w-full px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                      className="w-full px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300  focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                       required
                     />
                   </div>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                       type="email"
                       name="email"
                       id="email"
-                      className="w-full px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                      className="w-full px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                       required
                     />
                   </div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
                       type="text"
                       name="company"
                       id="company"
-                      className="w-full px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                      className="w-full px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                     />
                   </div>
 
@@ -144,7 +144,7 @@ export default function ContactPage() {
                     <select
                       name="service"
                       id="service"
-                      className="text-gray-900 w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                      className="text-gray-900 w-full px-3 py-2 bg-gray-100 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                       required
                     >
                       <option value="">Select a service...</option>
@@ -166,7 +166,7 @@ export default function ContactPage() {
                     name="message"
                     id="message"
                     rows={6}
-                    className="w-full px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary resize-none"
+                    className="w-full px-3 py-2 bg-gray-100 text-gray-900 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary resize-none"
                   />
                 </div>
 
@@ -174,7 +174,7 @@ export default function ContactPage() {
                 <div className="flex justify-start">
                   <div
                     onClick={() => setCaptchaValue('dummy')}
-                    className="cursor-pointer select-none inline-flex items-center space-x-3 border border-gray-300 rounded bg-gray-100 px-4 py-3 hover:bg-gray-200 w-full sm:w-auto"
+                    className="cursor-pointer select-none inline-flex items-center space-x-3 border border-gray-300  bg-gray-100 px-4 py-3 hover:bg-gray-200 w-full sm:w-auto"
                   >
                     <input
                       type="checkbox"
@@ -206,12 +206,16 @@ export default function ContactPage() {
                   </Link>.
                 </p>
 
+                {/* button with sliding bg */}
                 <div>
                   <button
                     type="submit"
-                    className="cursor-pointer bg-primary text-white px-6 py-3 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-primary transition-colors font-medium w-full sm:w-auto"
+                    className="relative group cursor-pointer overflow-hidden bg-primary text-white px-6 py-3 focus:outline-none focus:ring-2 focus:ring-primary font-medium w-full sm:w-auto"
                   >
-                    Send Message
+                    <span
+                      className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                    ></span>
+                    <span className="relative z-10">Send Message</span>
                   </button>
                 </div>
               </form>

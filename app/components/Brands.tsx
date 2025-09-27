@@ -13,9 +13,9 @@ const Brands = () => {
   const logos = Array.from({ length: 9 }, (_, i) => `/assets/brand-${i + 1}.webp`);
 
   return (
-    <section className="py-16">
+    <section className="py-4">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
           Trusted by Leading Brands
         </h2>
         <p className="text-gray-700 mb-12 max-w-2xl mx-auto">

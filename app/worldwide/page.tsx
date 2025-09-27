@@ -64,7 +64,7 @@ const WorldwidePresence = () => {
 
   return (
     <section className="pt-8 pb-20">
-      <div className="max-w-7xl mx-auto px-4 text-center">
+      <div className="max-w-6xl mx-auto px-4 text-center">
         {/* Başlık */}
         <h1 className="text-[28px] sm:text-4xl font-bold text-gray-900 mb-4">
           Our Worldwide Presence
@@ -82,7 +82,7 @@ const WorldwidePresence = () => {
 
           {/* World Map Container */}
           <div className="bg-white  border border-gray-100 p-8 mb-12">
-            <div className="relative w-full max-w-5xl mx-auto">
+            <div className="relative w-full max-w-6xl mx-auto">
               <div className="relative w-full aspect-[2/1] overflow-hidden">
                 <Image
                   src="/assets/worldwide.png"

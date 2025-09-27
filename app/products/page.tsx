@@ -36,7 +36,7 @@ const ProductsPage = () => {
         <div className="flex flex-wrap justify-center gap-3 mb-14">
           <button
             onClick={() => setActiveFilter("All")}
-            className={`cursor-pointer px-5 py-2 rounded-md border transition ${
+            className={`cursor-pointer px-5 py-2 border transition ${
               activeFilter === "All"
                 ? "bg-primary text-white border-primary"
                 : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
@@ -48,7 +48,7 @@ const ProductsPage = () => {
             <button
               key={section.title}
               onClick={() => setActiveFilter(section.title)}
-              className={`cursor-pointer px-5 py-2 rounded-md border transition ${
+              className={`cursor-pointer px-5 py-2 border transition ${
                 activeFilter === section.title
                   ? "bg-primary text-white border-primary"
                   : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
@@ -71,7 +71,7 @@ const ProductsPage = () => {
               {Array.from({ length: section.count }, (_, i) => (
                 <div
                   key={`${section.prefix}-${i + 1}`}
-                  className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+                  className="group relative overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                 >
                   <Image
                     src={`/assets/products/${section.prefix}-${i + 1}.webp`}

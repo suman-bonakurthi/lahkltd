@@ -135,7 +135,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <div className="pt-0 sm:pt-8">
+    <div >
       {/* Hero section */}
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 flex flex-col md:flex-row items-center gap-8">
         {/* Left content */}
@@ -164,7 +164,7 @@ const ServicesSection = () => {
             alt="Apparel Sourcing"
             width={600}
             height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
+            className="w-full h-auto shadow-lg"
           />
         </div>
       </section>
