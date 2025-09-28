@@ -14,16 +14,16 @@ export default function AutoBreadcrumb() {
   });
 
   return (
-    <nav className="pt-32" aria-label="Breadcrumb">
+    <nav className="pt-40" aria-label="Breadcrumb">
       {/* Navbarla aynı container */}
-      <div className="max-w-6xl mx-auto px-4">
-        <ol className="flex items-center space-x-1 text-sm">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 ">
+  <ol className="flex items-center text-base">
           <li className="flex items-center">
             <Link
               href="/"
               className="flex items-center text-gray-700 hover:text-primary transition-colors"
             >
-              <House size={18} className="mr-1 text-gray-600 hover:text-primary" />
+              <House size={18} className=" text-gray-600 hover:text-primary" />
             </Link>
           </li>
 
@@ -33,12 +33,12 @@ export default function AutoBreadcrumb() {
               {idx < crumbs.length - 1 ? (
                 <Link
                   href={crumb.href}
-                  className="capitalize text-gray-700 hover:text-primary transition-colors ml-1"
+                  className="capitalize text-gray-700 hover:text-primary transition-colors"
                 >
                   {crumb.label}
                 </Link>
               ) : (
-                <span className="capitalize text-primary font-medium ml-1">
+                <span className="capitalize text-primary font-semibold">
                   {crumb.label}
                 </span>
               )}

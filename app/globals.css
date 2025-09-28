@@ -6,10 +6,31 @@
   --color-secondary: #FFD600;
 }
 
+:root {
+ 
+
+  /* Section spacing */
+  --section-spacing: 3rem;     /* 48px mobil / default */
+  --section-spacing-lg: 5rem;  /* 80px desktop */
+}
+
+
 html {
-   overflow-x:hidden
+  overflow-x: hidden;
 }
 
 body {
-   @apply  text-white;
+  @apply text-white;
+}
+
+/* Section spacing helper class */
+.section-spacing {
+  padding-top: var(--section-spacing);
+}
+
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: var(--section-spacing-lg);
+  }
 }

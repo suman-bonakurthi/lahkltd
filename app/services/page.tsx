@@ -26,11 +26,11 @@ const ServicesSection = () => {
       case 'product-development':
         return (
           <div>
-            <h2 className="flex items-center gap-3 text-[28px] sm:text-4xl font-bold text-black mb-6">
+            <h2 className="flex items-center gap-3 text-4xl font-bold text-black mb-6">
               <Lightbulb className="w-6 h-6 text-primary" />
               Product Development
             </h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-700 text-base leading-relaxed">
               <p>
                 Whether you are starting with a simple sketch on a napkin or a comprehensive technical pack,
                 we specialize in transforming your garment and textile designs into reality.
@@ -63,11 +63,11 @@ const ServicesSection = () => {
       case 'fabric-sourcing':
         return (
           <div>
-            <h2 className="flex items-center gap-3 text-[28px] sm:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="flex items-center gap-3 text-4xl font-bold text-gray-900 mb-6">
               <Package className="w-6 h-6 text-primary" />
               Fabric and Accessories Sourcing
             </h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-700 text-base leading-relaxed">
               <p>
                 We offer comprehensive development and sourcing services for fabrics, trims, and accessories tailored to your specific needs.
               </p>
@@ -107,11 +107,11 @@ const ServicesSection = () => {
       case 'apparel-manufacturing':
         return (
           <div>
-            <h2 className="flex items-center gap-3 text-[28px] sm:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="flex items-center gap-3 text-4xl font-bold text-gray-900 mb-6">
               <Factory className="w-6 h-6 text-primary" />
               Apparel Manufacturing
             </h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-700 text-base leading-relaxed">
               <p>
                 L&amp;A is proudly associated with state-of-the-art garment manufacturing companies in Vietnam,
                 specializing in the production of a wide range of apparel for men, women, and children. Our partner factories hold certifications and comply with internationally recognized standards such as WRAP, BSCI, SMETA, and Better Work, ensuring ethical practices and responsible manufacturing.
@@ -135,43 +135,49 @@ const ServicesSection = () => {
   };
 
   return (
-    <div >
-      {/* Hero section */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 flex flex-col md:flex-row items-center gap-8">
-        {/* Left content */}
-        <div className="md:w-1/2 space-y-6">
-          <h1 className="text-[28px] sm:text-4xl font-bold text-black">
-            Custom Apparel Sourcing Solutions
-          </h1>
-          <p className="text-gray-700 text-lg sm:text-xl">
-            Bespoke sourcing and production strategies, tailored to meet your exact garment and apparel requirements.
-          </p>
-
-          {/* Link button */}
-          <Link
-            href="/contact-us"
-            className="group relative inline-flex items-center justify-center bg-primary text-white px-6 py-3  font-medium text-base transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
-          >
-            <span className="relative z-10">Discuss Your Requirements</span>
-            <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-          </Link>
-        </div>
-
-        {/* Right image */}
-        <div className="md:w-1/2">
-          <Image
-            src="/assets/services.png"
-            alt="Apparel Sourcing"
-            width={600}
-            height={400}
-            className="w-full h-auto shadow-lg"
-          />
+    <div>
+      {/* Hero section - Redesigned */}
+      <section className="pt-12 pb-16">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Text Content */}
+            <div className="space-y-8">
+              <div>
+                <h1 className="text-4xl font-bold text-black mb-6">
+                  Custom Apparel Sourcing Solutions
+                </h1>
+                <div className="w-24 h-1 bg-primary mb-5"></div>
+              </div>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Bespoke sourcing and production strategies, tailored to meet your exact garment and apparel requirements.
+              </p>
+              <Link
+                href="/contact-us"
+                className="group relative inline-flex items-center justify-center bg-primary text-white px-6 py-3 font-medium text-base transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
+              >
+                <span className="relative z-10">Discuss Your Requirements</span>
+                <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </Link>
+            </div>
+            
+            {/* Hero Image */}
+            <div className="relative">
+              <div className="relative w-full h-80 md:h-96 overflow-hidden shadow-2xl">
+                <Image
+                  src="/assets/services.png"
+                  alt="Custom Apparel Sourcing"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ServicesSection */}
       <div className="min-h-screen pt-12">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row">
           {/* Left navigation */}
           <div className="md:w-80 md:h-screen border-b md:border-b-0 md:border-r border-gray-200 p-4 md:p-8 sticky md:top-24 bg-white z-10">
             <nav className="flex flex-col gap-2">
@@ -208,4 +214,4 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection;
+export default ServicesSection

@@ -44,7 +44,7 @@ const solutions = [
 
 const Solutions = () => {
   return (
-    <section className="py-4">
+    <section className="section-spacing">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 text-center">
@@ -70,7 +70,7 @@ const Solutions = () => {
 
               {/* Content */}
               <h3 className="text-lg font-semibold text-gray-900 mb-2">{sol.title}</h3>
-              <p className="text-gray-600 text-sm">{sol.description}</p>
+              <p className="text-gray-600 text-base">{sol.description}</p>
             </div>
           ))}
         </div>

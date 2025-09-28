@@ -3,8 +3,9 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import CookieBanner from "./components/CookieBanner";
-import AutoBreadcrumb from "./components/AutoBreadcrumb";
+
 import Footer from "./components/Footer";
+import AutoBreadcrumb from "./components/AutoBreadcrumb";
 
 // Google Fonts
 const poppins = Poppins({
@@ -46,7 +47,7 @@ export default function RootLayout({
         <CookieBanner />
 
         {/* Breadcrumb  */}
-        <div className="max-w-6xl mx-auto px-4">
+        <div >
           <AutoBreadcrumb />
           
         </div>

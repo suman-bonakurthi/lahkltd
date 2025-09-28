@@ -64,7 +64,7 @@ const WorldwidePresence = () => {
 
   return (
     <section className="pt-8 pb-20">
-      <div className="max-w-6xl mx-auto px-4 text-center">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 text-center">
         {/* Başlık */}
         <h1 className="text-[28px] sm:text-4xl font-bold text-gray-900 mb-4">
           Our Worldwide Presence
@@ -78,7 +78,7 @@ const WorldwidePresence = () => {
 
         {/* World Map Section */}
         <div className="mb-16">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">Where We Operate</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-8">Where We Operate</h2>
 
           {/* World Map Container */}
           <div className="bg-white  border border-gray-100 p-8 mb-12">
@@ -143,7 +143,7 @@ const WorldwidePresence = () => {
                 <div className="w-12 h-12 flex items-center justify-center  text-primary mr-3">
                   <div className="w-3 h-3 bg-primary rounded-full"></div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">{country.name}</h3>
+                <h3 className="text-lg font-semibold text-gray-900">{country.name}</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">{country.description}</p>
             </div>
@@ -152,7 +152,7 @@ const WorldwidePresence = () => {
 
         {/* Benefits Section */}
         <div className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">
+          <h2 className="text-xl font-semibold text-gray-900 mb-8">
             Why Our Global Reach Matters
           </h2>
 
@@ -168,7 +168,7 @@ const WorldwidePresence = () => {
                     <div className="w-12 h-12 flex items-center justify-center  text-primary mr-3">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900">{benefit.title}</h3>
+                    <h3 className="text-lg font-semibold text-gray-900">{benefit.title}</h3>
                   </div>
                   <p className="text-gray-600 leading-relaxed">{benefit.text}</p>
                 </div>
@@ -179,7 +179,7 @@ const WorldwidePresence = () => {
 
         {/* CTA Section */}
         <div className="bg-[#0A3176] shadow-sm border border-gray-100 p-12 text-center text-white">
-          <h2 className="text-2xl font-semibold mb-4">Connecting You with the World</h2>
+          <h2 className="text-xl font-semibold mb-4">Connecting You with the World</h2>
           <p className="text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed mb-8">
             Whether you are sourcing products, expanding operations, or looking for reliable partners
             abroad, our team bridges the gap between markets and opportunities helping your business

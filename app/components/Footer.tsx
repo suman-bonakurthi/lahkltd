@@ -25,7 +25,7 @@ const Footer = () => {
 
         {/* Services */}
         <div>
-          <h3 className="text-white text-lg font-semibold mb-4">Services</h3>
+            <h3 className="text-white text-lg font-bold mb-4">Services</h3>
           <ul className="space-y-2">
             <li>
               <Link href="/services/product-development" className="hover:text-white transition">
@@ -47,7 +47,7 @@ const Footer = () => {
 
         {/* Sourcing */}
         <div>
-          <h3 className="text-white text-lg font-semibold mb-4">Sourcing</h3>
+            <h3 className="text-white text-lg font-bold mb-4">Sourcing</h3>
           <ul className="space-y-2">
             <li>
               <Link href="/sourcing/apparel" className="hover:text-white transition">
@@ -69,15 +69,15 @@ const Footer = () => {
 
         {/* Company */}
         <div>
-          <h3 className="text-white text-lg font-semibold mb-4">Company</h3>
+            <h3 className="text-white text-lg font-bold mb-4">Company</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/about" className="hover:text-white transition">
+              <Link href="/about-us" className="hover:text-white transition">
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-white transition">
+              <Link href="/contact-us" className="hover:text-white transition">
                 Contact Us
               </Link>
             </li>

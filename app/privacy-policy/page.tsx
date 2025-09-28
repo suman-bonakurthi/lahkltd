@@ -7,9 +7,9 @@ const PrivacyPolicy = () => {
     <div className="min-h-screen pt-8">
       {/* Blue Header Box (container-width only, no rounded) */}
       <div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#0A3176] text-white py-16 text-center">
-            <h1 className="text-[28px] sm:text-4xl  font-bold">
+            <h1 className="text-3xl sm:text-4xl font-bold">
               Privacy Policy for L&amp;A Web Services
             </h1>
           </div>
@@ -17,8 +17,8 @@ const PrivacyPolicy = () => {
       </div>
 
       {/* Content Section (no extra bg, default page bg) */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-sm text-black mb-8 pt-8"><strong>Last updated: September 26, 2025</strong></p>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <p className="text-base text-black mb-8 pt-8"><strong>Last updated: September 26, 2025</strong></p>
 
         {/* Intro */}
         <section className="mb-12">
@@ -35,17 +35,17 @@ const PrivacyPolicy = () => {
 
         {/* Interpretation and Definitions */}
         <section className="mb-12">
-          <h2 className="text-[28px] font-bold text-black mb-8">Interpretation and Definitions</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-black mb-8">Interpretation and Definitions</h2>
 
           <div className="mb-8">
-            <h3 className="text-xl font-semibold text-black mb-4">Interpretation</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-black mb-4">Interpretation</h3>
             <p className="text-black leading-relaxed">
               The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
             </p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold text-black mb-4">Definitions</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-black mb-4">Definitions</h3>
             <p className="text-black leading-relaxed mb-4">For the purposes of this Privacy Policy:</p>
             <div className="space-y-4 text-black">
               <div>
@@ -74,10 +74,10 @@ const PrivacyPolicy = () => {
 
         {/* Collecting and Using Your Personal Data */}
         <section className="mb-12">
-          <h2 className="text-[28px]  font-bold text-black mb-8">Collecting and Using Your Personal Data</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-black mb-8">Collecting and Using Your Personal Data</h2>
 
           <div className="mb-8">
-            <h3 className="text-xl font-semibold text-black mb-4">Types of Data Collected</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-black mb-4">Types of Data Collected</h3>
             <p className="text-black leading-relaxed mb-4">
               While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:
             </p>
@@ -102,7 +102,7 @@ const PrivacyPolicy = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold text-black mb-4">Use of Your Personal Data</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-black mb-4">Use of Your Personal Data</h3>
             <p className="text-black leading-relaxed mb-4">The Company may use Personal Data for the following purposes:</p>
             <div className="space-y-3 ml-4 text-black">
               <div className="flex items-start">
@@ -127,7 +127,7 @@ const PrivacyPolicy = () => {
 
         {/* Changes to this Privacy Policy */}
         <section className="mb-12">
-          <h2 className="text-[28px]  font-bold text-black mb-8">Changes to this Privacy Policy</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-black mb-8">Changes to this Privacy Policy</h2>
           <p className="text-black leading-relaxed mb-4">
             We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
           </p>
@@ -138,7 +138,7 @@ const PrivacyPolicy = () => {
 
         {/* Contact Us */}
         <section className="mb-12">
-          <h2 className="text-[28px]  font-bold text-black mb-8">Contact Us</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-black mb-8">Contact Us</h2>
           <p className="text-black leading-relaxed">
             If you have any questions about this Privacy Policy, You can contact us:{' '}
             <a href="#" className="text-primary hover:underline font-medium">click here</a>

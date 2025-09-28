@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="pt-12 relative w-full  min-h-screen overflow-hidden">
+    <section className="pt-40 relative w-full min-h-screen overflow-hidden">
       {/* Subtle dot pattern background */}
       <div className="absolute inset-0 opacity-30">
         <div
@@ -25,7 +25,7 @@ export default function Hero() {
       <div className="absolute bottom-60 right-1/3 w-12 h-12 border border-slate-300 rounded-full opacity-30"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-screen py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[calc(100vh-8rem)] ">
           {/* Left Content */}
           <div className="flex flex-col justify-center space-y-10 text-left order-1 lg:order-1">
             {/* Badge */}
@@ -38,16 +38,14 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Main heading with emphasis */}
-            <div className="space-y-4">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 leading-[0.9] tracking-tight">
-                L&A Garment
-                <span className="block text-slate-700 font-light italic">Sourcing &</span>
-                <span className="block relative">
-                  Manufacturing
-                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-slate-900 rounded-full transform -rotate-1"></div>
-                </span>
+            {/* Main heading */}
+            <div className="space-y-3">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 leading-tight tracking-tight">
+                L&amp;A – Leathers &amp; Appeals
               </h1>
+              <p className="text-lg sm:text-xl md:text-2xl text-slate-700 font-medium italic">
+                Sourcing &amp; Manufacturing Supply Chain
+              </p>
             </div>
 
             {/* Description */}
@@ -62,19 +60,16 @@ export default function Hero() {
             {/* Trust indicators */}
             <div className="flex items-center space-x-8 py-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-slate-900">500+</div>
+                <div className="text-2xl font-bold text-slate-900">50+</div>
                 <div className="text-sm text-slate-600 uppercase tracking-wide">Global Brands</div>
               </div>
               <div className="w-px h-12 bg-slate-300"></div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-slate-900">15+</div>
+                <div className="text-2xl font-bold text-slate-900">25+</div>
                 <div className="text-sm text-slate-600 uppercase tracking-wide">Years Experience</div>
               </div>
               <div className="w-px h-12 bg-slate-300"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-slate-900">ISO</div>
-                <div className="text-sm text-slate-600 uppercase tracking-wide">Certified</div>
-              </div>
+             
             </div>
           </div>
 
@@ -109,7 +104,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* CTA Buttons – mobilde resmin ALTINA taşındı */}
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-6 order-3 lg:col-span-2">
             <Link
               href="/contact-us"
@@ -141,9 +136,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Bottom wave separator */}
-     
     </section>
   );
 }

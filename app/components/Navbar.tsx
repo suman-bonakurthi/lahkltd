@@ -10,133 +10,115 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    onScroll();
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const mobileMenuTop = scrolled ? "5rem" : "7rem";
-
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 bg-white shadow transition-all duration-300 ${
-        scrolled ? "h-20" : "h-28"
-      }`}
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
+        ${scrolled ? "bg-white shadow-lg backdrop-blur py-2" : "bg-white py-3"} 
+      `}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center h-full">
-          {/* Logo + Hamburger */}
-          <div className="flex justify-between items-center py-2 lg:py-0">
-            <Link href="/" className="flex items-center">
-              <div
-                className={`relative transition-all duration-300 ${
-                  scrolled ? "w-32 h-10 sm:w-36 sm:h-12" : "w-48 h-16 sm:w-56 sm:h-18"
-                }`}
-              >
-                <Image
-                  src="/logo.jpg"
-                  alt="L&A Logo"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain"
-                />
-              </div>
-            </Link>
-
-            <div className="lg:hidden">
-              <button
-                onClick={() => setMobileOpen((s) => !s)}
-                aria-expanded={mobileOpen}
-                className="text-gray-800 hover:text-primary transition focus:outline-none"
-              >
-                {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-              </button>
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="relative">
+              <Image
+                src="/logo.jpg"
+                alt="L&A Logo"
+                width={300}
+                height={120}
+                priority
+                className={`object-contain transition-all duration-300 group-hover:scale-105
+                  ${
+                    scrolled
+                      ? "h-16 w-auto sm:h-18 md:h-20"
+                      : "h-20 w-auto sm:h-24 md:h-28 lg:h-32"
+                  }`}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10  opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
             </div>
-          </div>
+          </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex gap-4 xl:gap-6 items-center">
-            <Link href="/" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
-              Home
-            </Link>
-            <Link href="/worldwide" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
-              Worldwide
-            </Link>
-            <Link href="/services" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
-              Services
-            </Link>
-            <Link href="/why-us" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
-              Why Us
-            </Link>
-            <Link href="/about-us" className="text-gray-800 hover:text-primary font-medium transition text-sm xl:text-base">
-              About Us
-            </Link>
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            {[
+              { href: "/", label: "Home" },
+              { href: "/about-us", label: "About Us" },
+              { href: "/services", label: "Services" },
+              { href: "/why-us", label: "Why Us" },
+              { href: "/products", label: "Products" },
+              { href: "/worldwide", label: "Worldwide" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="relative text-gray-800 hover:text-primary font-medium transition-colors text-base xl:text-lg after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:-bottom-1 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {link.label}
+              </Link>
+            ))}
 
-            {/* Products link */}
             <Link
-              href="/products"
-              className="text-gray-800 font-medium text-sm xl:text-base hover:text-primary transition"
+              href="/contact-us"
+              className="group relative inline-flex items-center justify-center bg-primary text-white px-6 py-3  font-medium text-base xl:text-lg transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden"
             >
-              Products
+              <span className="relative z-10">Get In Touch</span>
+              <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </Link>
+          </nav>
 
-           <Link
-  href="/contact-us"
-  className="group relative inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-none font-medium text-sm xl:text-base transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
->
-  <span className="relative z-10">Get In Touch</span>
-  <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-</Link>
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setMobileOpen((s) => !s)}
+              aria-expanded={mobileOpen}
+              className="text-gray-800 hover:text-primary transition focus:outline-none p-2"
+            >
+              {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Nav */}
       {mobileOpen && (
-        <div
-          className="lg:hidden fixed left-0 right-0 bottom-0 z-40 bg-white overflow-y-auto shadow-lg"
-          style={{ top: mobileMenuTop }}
-        >
-          <div className="px-6 py-6">
-            <nav className="flex flex-col gap-3">
-              <Link href="/" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
-                Home
-              </Link>
-              <Link href="/worldwide" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
-                Worldwide
-              </Link>
-              <Link href="/services" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
-                Services
-              </Link>
-              <Link href="/why-us" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
-                Why Us
-              </Link>
-              <Link href="/about-us" onClick={() => setMobileOpen(false)} className="py-3 text-gray-800 font-medium border-b border-gray-100">
-                About Us
-              </Link>
+        <div className="lg:hidden bg-white shadow-xl border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-6 py-6">
+            <nav className="flex flex-col gap-4">
+              {[
+                { href: "/", label: "Home" },
+                { href: "/about-us", label: "About Us" },
+                { href: "/services", label: "Services" },
+                { href: "/why-us", label: "Why Us" },
+                { href: "/products", label: "Products" },
+                { href: "/worldwide", label: "Worldwide" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="py-3 text-gray-800 font-medium border-b border-gray-100 hover:text-primary transition text-base"
+                >
+                  {link.label}
+                </Link>
+              ))}
 
-              {/* Products link */}
               <Link
-                href="/products"
+                href="/contact-us"
                 onClick={() => setMobileOpen(false)}
-                className="py-3 text-gray-800 font-medium border-b border-gray-100 hover:text-primary transition"
+                className="group relative inline-flex items-center justify-center bg-primary text-white w-full px-6 py-3  font-medium text-lg transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden mt-4"
               >
-                Products
+                <span className="relative z-10">Get In Touch</span>
+                <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
-
-              <Link
-  href="/contact-us"
-  onClick={() => setMobileOpen(false)}
-  className="group relative inline-flex items-center justify-center bg-primary text-white w-full px-6 py-3 rounded-none font-medium text-base transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden mt-4"
->
-  <span className="relative z-10">Get In Touch</span>
-  <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-</Link>
             </nav>
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }
