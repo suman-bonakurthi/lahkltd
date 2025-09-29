@@ -28,17 +28,17 @@ const Footer = () => {
             <h3 className="text-white text-lg font-bold mb-4">Services</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/services/product-development" className="hover:text-white transition">
+              <Link href="/" className="hover:text-white transition">
                 Product Development
               </Link>
             </li>
             <li>
-              <Link href="/services/apparel-manufacturing" className="hover:text-white transition">
+              <Link href="/" className="hover:text-white transition">
                 Apparel Manufacturing
               </Link>
             </li>
             <li>
-              <Link href="/services/leatherwear" className="hover:text-white transition">
+              <Link href="/" className="hover:text-white transition">
                 Leatherwear
               </Link>
             </li>
@@ -50,17 +50,17 @@ const Footer = () => {
             <h3 className="text-white text-lg font-bold mb-4">Sourcing</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/sourcing/apparel" className="hover:text-white transition">
+              <Link href="/" className="hover:text-white transition">
                 Apparel Sourcing
               </Link>
             </li>
             <li>
-              <Link href="/sourcing/accessories" className="hover:text-white transition">
+              <Link href="/" className="hover:text-white transition">
                 Accessories & Trim Sourcing
               </Link>
             </li>
             <li>
-              <Link href="/sourcing/health-products" className="hover:text-white transition">
+              <Link href="/" className="hover:text-white transition">
                 Health Products
               </Link>
             </li>
