@@ -1,9 +1,35 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
-import { Globe2, Layers, Zap, Package, ShieldCheck } from "lucide-react";
+import { Globe2, Layers, Zap, Package, ShieldCheck, Target, Users } from "lucide-react";
 
-// Core values kartları
+// Feature sections matching About Us layout
+const featureSections = [
+  {
+    icon: Target,
+    title: "Our Story: Powering Global Apparel Sourcing",
+    image: "/assets/story.png",
+    description:
+      "L&H Garments was founded with a clear mission: to be a trusted sourcing partner for fashion brands and retailers worldwide, helping them navigate and thrive in the fast-moving apparel industry. Our journey is driven by a passion for quality, innovation, and ethical production. We are committed to delivering cost-effective, scalable, and sustainable garment solutions that make a real impact. At L&H, we don't just source products, we help our clients build stronger, more efficient global supply chains."
+  },
+  {
+    icon: Target,
+    title: "Our Vision",
+    image: "/assets/vision.png",
+    description:
+      "To be the most trusted apparel sourcing partner for fashion brands and retailers worldwide. This vision guides every order we fulfill and every partnership we build. We strive to create long-term relationships based on trust, transparency, and shared success, delivering quality garments with reliability and integrity."
+  },
+  {
+    icon: Users,
+    title: "Meet Our Driving Force",
+    image: "/assets/driving.png",
+    description:
+      "At the heart of L&H Garments is a team of sourcing experts, quality inspectors, and logistics professionals passionate about helping our clients succeed. While our expertise spans design, production, and supply chain management, we are united by a shared commitment to excellence, reliability, and innovation in every garment we deliver."
+  }
+];
+
+// Core values cards (Why Us)
 const whyUsItems = [
   {
     title: "Reliable",
@@ -37,109 +63,57 @@ const whyUsItems = [
   },
 ];
 
-export default function AboutUsPage() {
+export default function WhyUsPage() {
   return (
-    <div>
-      {/* Our Story */}
+    <div className="bg-gradient-to-b from-white to-gray-50">
       <section className="pt-12 pb-24">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div>
-                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-                  Our Story: Powering Global Apparel Sourcing
-                </h1>
-                <div className="w-24 h-1 bg-primary mb-5"></div>
-              </div>
-              <p className="text-gray-600 text-base leading-relaxed">
-                L&amp;H Garments was founded with a clear mission: to be a trusted
-                sourcing partner for fashion brands and retailers worldwide,
-                helping them navigate and thrive in the fast-moving apparel
-                industry. Our journey is driven by a passion for quality,
-                innovation, and ethical production. We are committed to delivering
-                cost-effective, scalable, and sustainable garment solutions that
-                make a real impact. At L&amp;H, we don&apos;t just source products, we
-                help our clients build stronger, more efficient global supply
-                chains.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="relative w-full h-80 md:h-96 overflow-hidden shadow-2xl">
-                <Image
-                  src="/assets/story.png" 
-                  alt="Our Story"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          {/* Features Section - Same as About Us */}
+          <div className="space-y-24">
+            {featureSections.map((feature, index) => (
+              <div
+                key={index}
+                className="grid lg:grid-cols-2 gap-12 items-stretch"
+              >
+                {/* Image Side */}
+                <div
+                  className={`${
+                    index % 2 === 1 ? "lg:order-2" : ""
+                  } relative aspect-[4/3] overflow-hidden shadow-xl border border-gray-200`}
+                >
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
 
-      {/* Our Vision */}
-      <section className="pb-24">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="md:order-2 space-y-8">
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-                  Our Vision
-                </h2>
-                <div className="w-24 h-1 bg-primary mb-5"></div>
+                {/* Content Side */}
+                <div
+                  className={`${
+                    index % 2 === 1 ? "lg:order-1" : ""
+                  } flex flex-col h-full`}
+                >
+                  <div className="bg-white p-8 lg:p-12 shadow-xl border border-gray-200 h-full flex flex-col">
+                    <div className="flex items-start mb-6">
+                      <div className="w-14 h-14 bg-primary/10 flex items-center justify-center flex-shrink-0 mr-4">
+                        <feature.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                          {feature.title}
+                        </h3>
+                        <div className="w-16 h-0.5 bg-primary mt-3"></div>
+                      </div>
+                    </div>
+                    <div className="text-gray-600 text-base leading-relaxed space-y-4 flex-1">
+                      <p>{feature.description}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="text-gray-600 text-base leading-relaxed">
-                To be the most trusted apparel sourcing partner for fashion brands
-                and retailers worldwide. This vision guides every order we fulfill
-                and every partnership we build. We strive to create long-term
-                relationships based on trust, transparency, and shared success,
-                delivering quality garments with reliability and integrity.
-              </p>
-            </div>
-            <div className="md:order-1 relative">
-              <div className="relative w-full h-80 md:h-96 overflow-hidden shadow-2xl">
-                <Image
-                  src="/assets/vision.png"
-                  alt="Our Vision"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Meet Our Driving Force */}
-      <section className="pb-24">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-                  Meet Our Driving Force
-                </h2>
-                <div className="w-24 h-1 bg-primary mb-5"></div>
-              </div>
-              <p className="text-gray-600 text-base leading-relaxed">
-                At the heart of L&amp;H Garments is a team of sourcing experts,
-                quality inspectors, and logistics professionals passionate about
-                helping our clients succeed. While our expertise spans design,
-                production, and supply chain management, we are united by a shared
-                commitment to excellence, reliability, and innovation in every
-                garment we deliver.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="relative w-full h-80 md:h-96 overflow-hidden shadow-2xl">
-                <Image
-                  src="/assets/driving.png"
-                  alt="Our Team"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -158,24 +132,27 @@ export default function AboutUsPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
             {whyUsItems.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div
                   key={idx}
-                  className="bg-white shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300"
+                  className="bg-white p-8 lg:p-12 shadow-xl border border-gray-200 transition-all duration-300 flex flex-col h-full"
                 >
-                  <div className="p-8">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 flex items-center justify-center text-primary mr-3">
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <h3 className="text-lg sm:text-lg font-semibold text-gray-900">
+                  <div className="flex items-start mb-6">
+                    <div className="w-14 h-14 bg-primary/10 flex items-center justify-center flex-shrink-0 mr-4">
+                      <Icon className="w-8 h-8 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-gray-900">
                         {item.title}
                       </h3>
+                      <div className="w-12 h-0.5 bg-primary mt-2"></div>
                     </div>
-                    <p className="text-gray-600 text-base leading-relaxed">{item.text}</p>
+                  </div>
+                  <div className="text-gray-600 text-base leading-relaxed space-y-4 flex-1">
+                    <p>{item.text}</p>
                   </div>
                 </div>
               );
