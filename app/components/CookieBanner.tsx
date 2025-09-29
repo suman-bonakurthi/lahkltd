@@ -20,7 +20,7 @@ export default function CookieBanner() {
 
   return (
     <div className="fixed bottom-0 left-0 w-full bg-gray-800/80 backdrop-blur-sm text-white p-4 shadow-lg z-50">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
   <p className="text-base text-white flex-1">
           We use cookies to improve your experience. By using our site, you agree to our{" "}
           <a href="/privacy-policy" className="underline font-medium text-primary">
