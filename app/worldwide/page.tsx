@@ -34,7 +34,7 @@ const WorldwidePresence = () => {
     {
       name: 'Cambodia',
       description: 'Bringing modern solutions to support growth and digital transformation.',
-      position: { x: '75%', y: '48%' },
+      position: { x: '74%', y: '48%' },
     },
     {
       name: 'Bangladesh',
