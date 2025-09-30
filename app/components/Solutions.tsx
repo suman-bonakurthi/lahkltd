@@ -48,10 +48,10 @@ const Solutions = () => {
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-headtext mb-4">
             Solutions Crafted for Your Fashion Brand
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-bodytext max-w-2xl mx-auto">
             We deliver exactly what your brand needs: reliable, scalable, and high-quality garment sourcing and manufacturing solutions. Our services are designed to ensure efficiency, quality assurance, and global supply chain reliability.
           </p>
         </div>
@@ -61,7 +61,7 @@ const Solutions = () => {
           {solutions.map((sol, idx) => (
             <div
               key={idx}
-              className="shadow-md p-6 flex flex-col items-start hover:shadow-xl transition-shadow duration-300"
+              className="shadow-sm hover:shadow-xl border border-gray-100  transform hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col items-start"
             >
               {/* Small icon top-left */}
               <div className="w-20 h-20 relative mb-4">
@@ -69,8 +69,8 @@ const Solutions = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{sol.title}</h3>
-              <p className="text-gray-600 text-base">{sol.description}</p>
+              <h3 className="text-xl font-semibold text-headtext mb-2">{sol.title}</h3>
+              <p className="text-bodytext text-sm">{sol.description}</p>
             </div>
           ))}
         </div>

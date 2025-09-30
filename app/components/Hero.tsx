@@ -32,7 +32,7 @@ export default function Hero() {
             <div className="inline-flex items-center">
               <div className="flex items-center bg-slate-50 border border-slate-200  px-6 py-3 shadow-sm">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3 animate-pulse"></div>
-                <span className="text-sm text-slate-700 font-medium tracking-wide uppercase">
+                <span className="text-sm text-headtext font-medium tracking-wide uppercase">
                   Premium Garments, Leather Goods & Apparel Solutions
                 </span>
               </div>
@@ -40,16 +40,16 @@ export default function Hero() {
 
             {/* Main heading */}
             <div className="space-y-3">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 leading-tight tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-headtext leading-tight tracking-tight">
                 L&amp;A – Leathers &amp; Appeals
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-slate-700 font-medium italic">
+              <p className="text-lg sm:text-xl md:text-2xl text-headtext font-medium italic">
                 Sourcing &amp; Manufacturing Supply Chain
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-xl text-slate-600 max-w-xl leading-relaxed font-light">
+            <p className="text-xl text-bodytext max-w-xl leading-relaxed font-light">
               We specialize in high-quality garment manufacturing, leather products, and
               general goods sourcing delivering reliable, scalable, and cost-effective
               solutions for fashion brands worldwide. With a commitment to quality, ethical
@@ -60,13 +60,13 @@ export default function Hero() {
             {/* Trust indicators */}
             <div className="flex items-center space-x-8 py-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-slate-900">50+</div>
-                <div className="text-sm text-slate-600 uppercase tracking-wide">Global Brands</div>
+                <div className="text-2xl font-bold text-headtext">50+</div>
+                <div className="text-sm text-headtext uppercase tracking-wide">Global Brands</div>
               </div>
               <div className="w-px h-12 bg-slate-300"></div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-slate-900">25+</div>
-                <div className="text-sm text-slate-600 uppercase tracking-wide">Years Experience</div>
+                <div className="text-2xl font-bold text-headtext">25+</div>
+                <div className="text-sm text-headtext uppercase tracking-wide">Years Experience</div>
               </div>
               <div className="w-px h-12 bg-slate-300"></div>
              
@@ -97,9 +97,9 @@ export default function Hero() {
               <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-3 shadow-lg">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                  <span className="text-sm font-semibold text-slate-900">Quality Certified</span>
+                  <span className="text-sm font-semibold text-headtext">Quality Certified</span>
                 </div>
-                <p className="text-xs text-slate-600 mt-1">Ethical Production Standards</p>
+                <p className="text-xs text-bodytext mt-1">Ethical Production Standards</p>
               </div>
             </div>
           </div>
@@ -108,15 +108,15 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 pt-6 order-3 lg:col-span-2">
             <Link
               href="/contact-us"
-              className="group relative inline-flex items-center justify-center bg-primary hover:bg-blue-700 text-white px-10 py-5 rounded-none font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
+              className="group relative inline-flex items-center justify-center bg-primary hover:bg-hover text-white px-10 py-5 rounded-none font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
             >
               <span className="relative z-10">Let Us Build Your Solution</span>
-              <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              <div className="absolute inset-0 bg-hover transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </Link>
 
             <Link
               href="/products"
-              className="inline-flex items-center justify-center border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white px-10 py-5 rounded-none font-semibold text-lg transition-all duration-300"
+              className="inline-flex items-center justify-center border-2 border-headtext text-headtext hover:bg-hover hover:text-white  px-10 py-5 rounded-none font-semibold text-lg transition-all duration-300"
             >
               View Our Work
               <svg

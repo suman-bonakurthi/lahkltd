@@ -66,11 +66,11 @@ const WorldwidePresence = () => {
     <section className="pt-8 pb-20">
       <div className="max-w-7xl mx-auto px-4 lg:px-8 text-center">
         {/* Başlık */}
-        <h1 className="text-[28px] sm:text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-headtext mb-4">
           Our Worldwide Presence
         </h1>
         <div className="w-24 h-1 bg-primary mx-auto mb-6 rounded-full"></div>
-        <p className="text-gray-600 mb-14 max-w-2xl mx-auto text-lg">
+        <p className="text-bodytext mb-14 max-w-2xl mx-auto text-base">
           At L&amp;A, we believe that great products and services know no borders. Our commitment to
           excellence has allowed us to build a strong network of customers and partners across key
           global markets.
@@ -78,10 +78,10 @@ const WorldwidePresence = () => {
 
         {/* World Map Section */}
         <div className="mb-16">
-          <h2 className="text-xl font-semibold text-gray-900 mb-8">Where We Operate</h2>
+          <h2 className="text-xl font-semibold text-headtext mb-8">Where We Operate</h2>
 
           {/* World Map Container */}
-          <div className="bg-white  border border-gray-100 p-8 mb-12">
+          <div className="bg-white border border-gray-100 p-8 mb-12">
             <div className="relative w-full max-w-6xl mx-auto">
               <div className="relative w-full aspect-[2/1] overflow-hidden">
                 <Image
@@ -125,9 +125,9 @@ const WorldwidePresence = () => {
             {/* Legend */}
             <div className="flex items-center justify-center mt-6 gap-3">
               <div className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-primary rounded-full"></div>
-              <span className="text-sm text-gray-600 font-medium">L&amp;A Global Presence</span>
+              <span className="text-sm text-headtext font-medium">L&amp;A Global Presence</span>
               <span className="text-gray-300">•</span>
-              <span className="text-sm text-gray-500">{countries.length} Countries</span>
+              <span className="text-sm text-headtext">{countries.length} Countries</span>
             </div>
           </div>
         </div>
@@ -143,16 +143,16 @@ const WorldwidePresence = () => {
                 <div className="w-12 h-12 flex items-center justify-center  text-primary mr-3">
                   <div className="w-3 h-3 bg-primary rounded-full"></div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">{country.name}</h3>
+                <h3 className="text-xl font-semibold text-headtext">{country.name}</h3>
               </div>
-              <p className="text-gray-600 leading-relaxed">{country.description}</p>
+              <p className="text-bodytext leading-relaxed text-sm">{country.description}</p>
             </div>
           ))}
         </div>
 
         {/* Benefits Section */}
         <div className="mb-12">
-          <h2 className="text-xl font-semibold text-gray-900 mb-8">
+          <h2 className="text-xl font-semibold text-headtext mb-8">
             Why Our Global Reach Matters
           </h2>
 
@@ -168,9 +168,9 @@ const WorldwidePresence = () => {
                     <div className="w-12 h-12 flex items-center justify-center  text-primary mr-3">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900">{benefit.title}</h3>
+                    <h3 className="text-xl font-semibold text-headtext">{benefit.title}</h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">{benefit.text}</p>
+                  <p className="text-bodytext leading-relaxed text-sm">{benefit.text}</p>
                 </div>
               );
             })}
@@ -178,9 +178,9 @@ const WorldwidePresence = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-[#0A3176] shadow-sm border border-gray-100 p-12 text-center text-white">
+        <div className="bg-secondary shadow-sm border border-gray-100 p-12 text-center text-white">
           <h2 className="text-xl font-semibold mb-4">Connecting You with the World</h2>
-          <p className="text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-primary-foreground/90 text-sm max-w-3xl mx-auto leading-relaxed mb-8">
             Whether you are sourcing products, expanding operations, or looking for reliable partners
             abroad, our team bridges the gap between markets and opportunities helping your business
             succeed globally.

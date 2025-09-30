@@ -39,7 +39,7 @@ export default function Navbar() {
                       : "h-20 w-auto sm:h-24 md:h-28 lg:h-32"
                   }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10  opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
             </div>
           </Link>
 
@@ -56,7 +56,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-gray-800 hover:text-primary font-medium transition-colors text-base xl:text-lg after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:-bottom-1 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                className="text-headtext hover:text-primary font-medium transition-colors text-sm"
               >
                 {link.label}
               </Link>
@@ -64,10 +64,10 @@ export default function Navbar() {
 
             <Link
               href="/contact-us"
-              className="group relative inline-flex items-center justify-center bg-primary text-white px-6 py-3  font-medium text-base xl:text-lg transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden"
+              className="group relative inline-flex items-center justify-center bg-primary text-white px-6 py-3 font-medium text-sm transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden"
             >
               <span className="relative z-10">Get In Touch</span>
-              <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              <div className="absolute inset-0 bg-hover transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </Link>
           </nav>
 
@@ -76,7 +76,7 @@ export default function Navbar() {
             <button
               onClick={() => setMobileOpen((s) => !s)}
               aria-expanded={mobileOpen}
-              className="text-gray-800 hover:text-primary transition focus:outline-none p-2"
+              className="text-headtext hover:text-primary transition focus:outline-none p-2"
             >
               {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
@@ -101,7 +101,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="py-3 text-gray-800 font-medium border-b border-gray-100 hover:text-primary transition text-base"
+                  className="py-3 text-headtext font-medium border-b border-gray-100 hover:text-primary transition text-base"
                 >
                   {link.label}
                 </Link>
@@ -110,10 +110,10 @@ export default function Navbar() {
               <Link
                 href="/contact-us"
                 onClick={() => setMobileOpen(false)}
-                className="group relative inline-flex items-center justify-center bg-primary text-white w-full px-6 py-3  font-medium text-lg transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden mt-4"
+                className="group relative inline-flex items-center justify-center bg-primary text-white w-full px-6 py-3 font-medium text-lg transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden mt-4"
               >
                 <span className="relative z-10">Get In Touch</span>
-                <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <div className="absolute inset-0 bg-hover transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
             </nav>
           </div>

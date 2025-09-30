@@ -2,8 +2,11 @@
 
 
 @theme inline {
- --color-primary: #5e5cfa;
-  --color-secondary: #FFD600;
+ --color-primary: #0092AB;
+ --color-secondary: #FF6B4A;
+ --color-headtext: #111827; /* Dark gray for headings */
+  --color-bodytext: #4b5563; /* Medium gray for body text */
+  --color-hover:#007A8F;
 }
 
 :root {

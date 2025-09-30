@@ -55,11 +55,11 @@ const ProductsPage = () => {
   return (
     <section className="pt-8 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-headtext mb-4">
           Our Products
         </h1>
         <div className="w-24 h-1 bg-primary mx-auto mb-6 rounded-full"></div>
-        <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-base">
+        <p className="text-bodytext mb-8 max-w-2xl mx-auto text-base">
           Explore our carefully curated selection of products across categories.
         </p>
 
@@ -75,7 +75,7 @@ const ProductsPage = () => {
               className={`cursor-pointer px-5 py-2 border transition ${
                 activeCategory === cat.title
                   ? "bg-primary text-white border-primary"
-                  : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
+                  : "bg-gray-100 text-headtext border-gray-300 hover:bg-gray-200"
               }`}
             >
               {cat.title}
@@ -93,7 +93,7 @@ const ProductsPage = () => {
                 className={`cursor-pointer px-5 py-2 border transition ${
                   activeSubcategory === sub.title
                     ? "bg-primary text-white border-primary"
-                    : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
+                    : "bg-gray-100 text-headtext border-gray-300 hover:bg-gray-200"
                 }`}
               >
                 {sub.title}

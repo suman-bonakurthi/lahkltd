@@ -30,14 +30,14 @@ const ServicesSection = () => {
               <Lightbulb className="w-6 h-6 text-primary" />
               Product Development
             </h2>
-            <div className="space-y-4 text-gray-700 text-base leading-relaxed">
+            <div className="space-y-4 text-bodytext text-base leading-relaxed">
               <p>
                 Whether you are starting with a simple sketch on a napkin or a comprehensive technical pack,
                 we specialize in transforming your garment and textile designs into reality.
                 With extensive expertise in every phase of product development, we ensure your vision is executed
                 with the highest standards of precision, quality, and craftsmanship.
               </p>
-              <p className="font-semibold text-gray-900">Our services include, but are not limited to:</p>
+              <p className="font-semibold text-headtext">Our services include, but are not limited to:</p>
               <ul className="space-y-2">
                 {[
                   'Product development and design refinement',
@@ -63,11 +63,11 @@ const ServicesSection = () => {
       case 'fabric-sourcing':
         return (
           <div>
-            <h2 className="flex items-center gap-3 text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="flex items-center gap-3 text-4xl font-bold text-headtext mb-6">
               <Package className="w-6 h-6 text-primary" />
               Fabric and Accessories Sourcing
             </h2>
-            <div className="space-y-4 text-gray-700 text-base leading-relaxed">
+            <div className="space-y-4 text-bodytext text-base leading-relaxed">
               <p>
                 We offer comprehensive development and sourcing services for fabrics, trims, and accessories tailored to your specific needs.
               </p>
@@ -107,11 +107,11 @@ const ServicesSection = () => {
       case 'apparel-manufacturing':
         return (
           <div>
-            <h2 className="flex items-center gap-3 text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="flex items-center gap-3 text-4xl font-bold text-headtext mb-6">
               <Factory className="w-6 h-6 text-primary" />
               Apparel Manufacturing
             </h2>
-            <div className="space-y-4 text-gray-700 text-base leading-relaxed">
+            <div className="space-y-4 text-bodytext text-base leading-relaxed">
               <p>
                 L&amp;A is proudly associated with state-of-the-art garment manufacturing companies in Vietnam,
                 specializing in the production of a wide range of apparel for men, women, and children. Our partner factories hold certifications and comply with internationally recognized standards such as WRAP, BSCI, SMETA, and Better Work, ensuring ethical practices and responsible manufacturing.
@@ -137,32 +137,41 @@ const ServicesSection = () => {
   return (
     <div>
       {/* Hero section - Redesigned */}
-      <section className="pt-12 pb-16">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Text Content */}
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div>
-                <h1 className="text-4xl font-bold text-black mb-6">
-                  Custom Apparel Sourcing Solutions
+                <h1 className="text-4xl font-bold text-headtext leading-snug">
+                  Custom Apparel <br /> Sourcing Solutions
                 </h1>
-                <div className="w-24 h-1 bg-primary mb-5"></div>
+                <div className="w-28 h-1 bg-primary mt-4"></div>
               </div>
-              <p className="text-gray-700 text-base leading-relaxed">
-                Bespoke sourcing and production strategies, tailored to meet your exact garment and apparel requirements.
+
+              <p className="text-bodytext text-lg leading-relaxed">
+                <span className="font-semibold text-headtext">
+                  Bespoke sourcing and production strategies
+                </span>{" "}
+                designed to deliver{" "}
+                <span className="font-medium text-headtext">precision</span>,{" "}
+                <span className="font-medium text-headtext">quality</span>, and{" "}
+                <span className="font-medium text-headtext">efficiency</span> — tailored
+                to meet your exact garment and apparel requirements.
               </p>
+
               <Link
                 href="/contact-us"
-                className="group relative inline-flex items-center justify-center bg-primary text-white px-6 py-3 font-medium text-base transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
+                className="group relative inline-flex items-center justify-center bg-primary text-white px-7 py-3 font-semibold text-base tracking-wide transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden"
               >
                 <span className="relative z-10">Discuss Your Requirements</span>
-                <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <div className="absolute inset-0 bg-hover transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
             </div>
-            
+
             {/* Hero Image */}
             <div className="relative">
-              <div className="relative w-full h-80 md:h-96 overflow-hidden shadow-2xl">
+              <div className="relative w-full h-80 md:h-96 overflow-hidden shadow-lg border-4 border-primary">
                 <Image
                   src="/assets/services.png"
                   alt="Custom Apparel Sourcing"
@@ -190,7 +199,7 @@ const ServicesSection = () => {
                     className={`w-full flex items-center gap-3 cursor-pointer text-left px-4 py-3 text-sm font-medium transition-colors ${
                       activeSection === item.id
                         ? 'text-primary border-l-4 border-primary'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                        : 'text-headtext hover:text-gray-900 hover:bg-gray-50'
                     }`}
                   >
                     <Icon className="w-5 h-5" />
@@ -214,4 +223,4 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection
+export default ServicesSection;
