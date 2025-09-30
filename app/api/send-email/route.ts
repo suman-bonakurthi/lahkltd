@@ -1,50 +1,29 @@
-// ./app/api/send-email/route.ts
 import { Resend } from 'resend';
 
-// ⚡ Resend API KEY FROM ENV
-if (!process.env.RESEND_API_KEY) {
-  throw new Error('RESEND_API_KEY is not defined in environment variables');
-}
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    // Json Data 
-    const { firstName, email } = await req.json();
-
-    // ⚠️ Must be filled
-    if (!firstName || !email) {
-      return new Response(
-        JSON.stringify({ error: 'firstName and email are required' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
-      );
+    const { fullName, email } = await req.json();
+    if (!fullName || !email) {
+      return Response.json({ error: 'fullName and email are required' }, { status: 400 });
     }
-
-    // ⚠️ Must be filled
     const { data, error } = await resend.emails.send({
-      from: 'Your Company <info@yourdomain.com>', // Change: your brand and email
-      to: [email],                                 // Change: recipient's email (from form)
-      subject: `Welcome, ${firstName}!`,          // Email subject
+      from: 'Acme <onboarding@resend.dev>',
+      to: ['bykendolu@gmail.com'],
+      subject: `Hello ${fullName}!`,
       html: `
         <div style="font-family:sans-serif; text-align:center;">
-          <h1>Welcome, ${firstName}!</h1>
-          <p>Thank you for joining us.</p>
+          <h1>Hello, ${fullName}!</h1>
+          <p>This is a test email from Resend API.</p>
         </div>
       `,
     });
-
     if (error) {
-      return new Response(JSON.stringify({ error }), { status: 500 });
+      return Response.json({ error }, { status: 500 });
     }
-
-    return new Response(
-      JSON.stringify({ message: 'Email sent', data }),
-      { status: 200, headers: { 'Content-Type': 'application/json' } }
-    );
-  } catch (err) {
-    return new Response(
-      JSON.stringify({ error: (err as Error).message }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
-    );
+    return Response.json(data);
+  } catch (error) {
+    return Response.json({ error }, { status: 500 });
   }
 }

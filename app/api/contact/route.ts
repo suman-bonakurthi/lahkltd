@@ -23,8 +23,8 @@ export async function POST(req: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const { data: emailData, error } = await resend.emails.send({
-      from: 'L&A Contact Form <contact@yourwebsite.com>',
-      to: ['youremail@example.com'],
+      from: 'L&A Contact Form <onboarding@resend.dev>',
+      to: ['bykendolu@gmail.com'], // <-- use your real email here
       subject: `New Contact Form Submission - ${fullName}`,
       html: `
         <!DOCTYPE html>
