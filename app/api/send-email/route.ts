@@ -1,27 +1,40 @@
+// ./app/api/send-email/route.ts
 import { Resend } from 'resend';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { EmailTemplate, EmailTemplateProps } from '../../components/EmailTemplate';
 
+// ⚡ Resend API KEY FROM ENV
+if (!process.env.RESEND_API_KEY) {
+  throw new Error('RESEND_API_KEY is not defined in environment variables');
+}
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const { firstName } = await req.json();
+    // Json Data 
+    const { firstName, email } = await req.json();
 
-    // Props'u tip ile belirle
-    const props: EmailTemplateProps = { firstName: firstName || 'John' };
+    // ⚠️ Must be filled
+    if (!firstName || !email) {
+      return new Response(
+        JSON.stringify({ error: 'firstName and email are required' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // ⚡ EmailTemplate props
+    const props: EmailTemplateProps = { firstName };
 
     // JSX -> HTML string
-    const emailHtml = ReactDOMServer.renderToStaticMarkup(
-      React.createElement(EmailTemplate, props)
+    const emailHtml = renderToStaticMarkup(
+      EmailTemplate(props)
     );
 
-    // Send email
+    // ⚠️ Must be filled
     const { data, error } = await resend.emails.send({
-      from: 'Acme <info@yourwebsite.com>',
-      to: ['yourmail@example.com'], // yourmail
-      subject: 'Welcome!',
+      from: 'Your Company <info@yourdomain.com>', // Change: your brand and email
+      to: [email],                                 // Change: recipient's email (from form)
+      subject: `Welcome, ${firstName}!`,          // Email subject
       html: emailHtml,
     });
 
@@ -29,10 +42,10 @@ export async function POST(req: Request) {
       return new Response(JSON.stringify({ error }), { status: 500 });
     }
 
-    return new Response(JSON.stringify({ message: 'Email sent', data }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return new Response(
+      JSON.stringify({ message: 'Email sent', data }),
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
+    );
   } catch (err) {
     return new Response(
       JSON.stringify({ error: (err as Error).message }),
