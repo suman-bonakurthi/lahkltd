@@ -1,7 +1,5 @@
 // ./app/api/send-email/route.ts
 import { Resend } from 'resend';
-import { renderToStaticMarkup } from 'react-dom/server';
-import { EmailTemplate, EmailTemplateProps } from '../../components/EmailTemplate';
 
 // ⚡ Resend API KEY FROM ENV
 if (!process.env.RESEND_API_KEY) {
@@ -22,20 +20,17 @@ export async function POST(req: Request) {
       );
     }
 
-    // ⚡ EmailTemplate props
-    const props: EmailTemplateProps = { firstName };
-
-    // JSX -> HTML string
-    const emailHtml = renderToStaticMarkup(
-      EmailTemplate(props)
-    );
-
     // ⚠️ Must be filled
     const { data, error } = await resend.emails.send({
       from: 'Your Company <info@yourdomain.com>', // Change: your brand and email
       to: [email],                                 // Change: recipient's email (from form)
       subject: `Welcome, ${firstName}!`,          // Email subject
-      html: emailHtml,
+      html: `
+        <div style="font-family:sans-serif; text-align:center;">
+          <h1>Welcome, ${firstName}!</h1>
+          <p>Thank you for joining us.</p>
+        </div>
+      `,
     });
 
     if (error) {
