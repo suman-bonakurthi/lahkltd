@@ -1,6 +1,5 @@
 // app/privacy/page.tsx  (veya projenin uygun klasörü)
 "use client";
-import React from "react";
 
 const PrivacyPolicy = () => {
   return (
@@ -8,7 +7,7 @@ const PrivacyPolicy = () => {
       {/* Blue Header Box (container-width only, no rounded) */}
       <div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-secondary text-white py-16 text-center">
+          <div className="bg-primary text-white py-16 text-center">
             <h1 className="text-3xl sm:text-4xl font-bold">
               Privacy Policy for L&amp;A Web Site
             </h1>
