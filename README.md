@@ -42,7 +42,6 @@ Contributions to Next.js are welcome and highly appreciated. However, before you
 We have a list of **[good first issues](https://github.com/vercel/next.js/labels/%22good%20first%20issue%22)** that contain bugs that have a relatively limited scope. This is a great place for newcomers and beginners alike to get started, gain experience, and get familiar with our contribution process.
 
 ---
-## Security
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
