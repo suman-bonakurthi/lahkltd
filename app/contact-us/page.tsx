@@ -110,7 +110,7 @@ export default function ContactPage() {
       {/* Header */}
       <div className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-secondary text-white py-16 text-center">
+          <div className="bg-primary text-white py-16 text-center">
             <h1 className="text-3xl sm:text-4xl font-bold">Contact</h1>
           </div>
         </div>

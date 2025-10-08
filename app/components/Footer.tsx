@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -14,16 +13,16 @@ const Footer = () => {
             <Link href="/" className="inline-block">
               <Image
                 src="/logo.jpg"
-                alt="L&H Logo"
+                alt="L&A Logo"
                 width={100}
-                height={70}
+                height={0}
                 unoptimized
                 className="object-contain w-24 h-auto md:w-32 lg:w-40"
                 priority
               />
             </Link>
             <p className="text-xs text-gray-500 mt-2 max-w-xs">
-              © 2025 L&A Garments. All rights reserved.
+              © 2025 L&A Company. All rights reserved.
             </p>
           </div>
 

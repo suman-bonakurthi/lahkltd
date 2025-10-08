@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -27,7 +27,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="relative">
               <Image
-                src="/logo.jpg"
+                src="/logo.svg"
                 alt="L&A Logo"
                 width={300}
                 height={120}

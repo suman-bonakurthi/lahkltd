@@ -4,8 +4,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const domain =
-    process.env.NEXT_PUBLIC_DOMAIN_NAME || "https://yourwebsite.com";
+  const domain = process.env.NEXT_PUBLIC_DOMAIN_NAME || "https://lahkltd.com";
 
   return [
     {

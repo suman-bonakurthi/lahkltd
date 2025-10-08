@@ -1,16 +1,15 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
 import {
   Globe2,
   Layers,
-  Zap,
   Package,
   ShieldCheck,
   Target,
   Users,
+  Zap,
 } from "lucide-react";
+import Image from "next/image";
 
 // Feature sections matching About Us layout
 const featureSections = [
@@ -19,7 +18,7 @@ const featureSections = [
     title: "Our Story: Powering Global Apparel Sourcing",
     image: "/assets/why-us/our-story.jpg",
     description:
-      "L&H Garments was founded with a clear mission: to be a trusted sourcing partner for fashion brands and retailers worldwide, helping them navigate and thrive in the fast-moving apparel industry. Our journey is driven by a passion for quality, innovation, and ethical production. We are committed to delivering cost-effective, scalable, and sustainable garment solutions that make a real impact. At L&H, we don't just source products, we help our clients build stronger, more efficient global supply chains.",
+      "L&A Company was founded with a clear mission: to be a trusted sourcing partner for fashion brands and retailers worldwide, helping them navigate and thrive in the fast-moving apparel industry. Our journey is driven by a passion for quality, innovation, and ethical production. We are committed to delivering cost-effective, scalable, and sustainable garment solutions that make a real impact. At L&A, we don't just source products, we help our clients build stronger, more efficient global supply chains.",
   },
   {
     icon: Target,
@@ -33,7 +32,7 @@ const featureSections = [
     title: "Meet Our Driving Force",
     image: "/assets/why-us/driving-force.jpg",
     description:
-      "At the heart of L&H Garments is a team of sourcing experts, quality inspectors, and logistics professionals passionate about helping our clients succeed. While our expertise spans design, production, and supply chain management, we are united by a shared commitment to excellence, reliability, and innovation in every garment we deliver.",
+      "At the heart of L&A Company is a team of sourcing experts, quality inspectors, and logistics professionals passionate about helping our clients succeed. While our expertise spans design, production, and supply chain management, we are united by a shared commitment to excellence, reliability, and innovation in every garment we deliver.",
   },
 ];
 

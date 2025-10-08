@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import { Globe2, Target, Zap } from "lucide-react";
 import Image from "next/image";
-import { Globe2, Zap, Target } from "lucide-react";
+import { useState } from "react";
 
 const WorldwidePresence = () => {
   const [activeCountry, setActiveCountry] = useState<
@@ -195,7 +195,7 @@ const WorldwidePresence = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-secondary shadow-sm border border-gray-100 p-12 text-center text-white">
+        <div className="bg-primary shadow-sm border border-gray-100 p-12 text-center text-white">
           <h2 className="text-xl font-semibold mb-4">
             Connecting You with the World
           </h2>
