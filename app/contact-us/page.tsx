@@ -329,6 +329,20 @@ export default function ContactPage() {
             >
               ×
             </button>
+            {/* 👇 Add this line to display status */}
+            {status && (
+              <p
+                className={`text-sm mt-4 ${
+                  status.startsWith("✅")
+                    ? "text-green-600"
+                    : status.startsWith("⚠️")
+                      ? "text-yellow-600"
+                      : "text-red-600"
+                }`}
+              >
+                {status}
+              </p>
+            )}
 
             {/* Check Icon */}
             <div className="flex justify-center mb-4">

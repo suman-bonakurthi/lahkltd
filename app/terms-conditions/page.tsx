@@ -1,6 +1,5 @@
 // app/terms/page.tsx
 "use client";
-import React from "react";
 
 const TermsAndConditions = () => {
   return (
@@ -8,9 +7,9 @@ const TermsAndConditions = () => {
       {/* Blue Header Box (container-width only, no rounded) */}
       <div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-secondary text-white py-16 text-center">
+          <div className="bg-primary text-white py-16 text-center">
             <h1 className=" text-3xl sm:text-4xl font-bold">
-              Terms and Conditions for L&amp;A Web Site
+              Terms and Conditions for L&amp;A Company
             </h1>
           </div>
         </div>
