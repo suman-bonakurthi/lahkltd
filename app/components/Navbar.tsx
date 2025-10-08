@@ -64,10 +64,10 @@ export default function Navbar() {
 
             <Link
               href="/contact-us"
-              className="group relative inline-flex items-center justify-center bg-primary text-white px-6 py-3 font-medium text-sm transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden"
+              className="group relative inline-flex items-center justify-center bg-primary rounded-full text-white px-6 py-3 font-medium text-sm transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden"
             >
               <span className="relative z-10">Get In Touch</span>
-              <div className="absolute inset-0 bg-hover transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              <div className="absolute inset-0 bg-hover rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </Link>
           </nav>
 
@@ -78,7 +78,11 @@ export default function Navbar() {
               aria-expanded={mobileOpen}
               className="text-headtext hover:text-primary transition focus:outline-none p-2"
             >
-              {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+              {mobileOpen ? (
+                <X className="w-7 h-7" />
+              ) : (
+                <Menu className="w-7 h-7" />
+              )}
             </button>
           </div>
         </div>
@@ -110,10 +114,10 @@ export default function Navbar() {
               <Link
                 href="/contact-us"
                 onClick={() => setMobileOpen(false)}
-                className="group relative inline-flex items-center justify-center bg-primary text-white w-full px-6 py-3 font-medium text-lg transition-all duration-300 shadow-md hover:shadow-xl overflow-hidden mt-4"
+                className="group relative inline-flex items-center justify-center bg-primary text-white px-6 py-3 font-medium text-sm transition-all duration-300 rounded-full shadow-md hover:shadow-xl overflow-hidden"
               >
                 <span className="relative z-10">Get In Touch</span>
-                <div className="absolute inset-0 bg-hover transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <div className="absolute inset-0 bg-hover transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></div>
               </Link>
             </nav>
           </div>

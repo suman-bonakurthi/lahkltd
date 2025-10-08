@@ -26,21 +26,27 @@ const categories: Category[] = [
     subcategories: [
       { title: "Belts", prefix: "belt", count: 3 },
       { title: "Wallets", prefix: "wallet", count: 2 },
-      { title: "Bags", prefix: "bag", count: 2 },
+      { title: "Bags", prefix: "bag", count: 5 },
     ],
   },
   {
     title: "Beverages",
     subcategories: [
-      { title: "Sunflower Oil", images: ["bev-1.webp", "bev-2.webp", "bev-4.webp"] },
-      { title: "Alcoholic Beer", images: ["bev-3.webp", "bev-5.webp", "bev-6.webp"] },
+      {
+        title: "Sunflower Oil",
+        images: ["bev-1.webp", "bev-2.webp", "bev-4.webp"],
+      },
+      {
+        title: "Alcoholic Beer",
+        images: ["bev-3.webp", "bev-5.webp", "bev-6.webp"],
+      },
     ],
   },
 ];
 
 const ProductsPage = () => {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>("Apparel");
+  const [activeSubcategory, setActiveSubcategory] = useState<string>("Men");
 
   const currentSubcategories =
     activeCategory !== null
@@ -70,12 +76,14 @@ const ProductsPage = () => {
               key={cat.title}
               onClick={() => {
                 setActiveCategory(cat.title);
-                setActiveSubcategory(null);
+                // Automatically pick first subcategory
+                const firstSub = cat.subcategories[0];
+                if (firstSub) setActiveSubcategory(firstSub.title);
               }}
               className={`cursor-pointer px-5 py-2 border transition ${
                 activeCategory === cat.title
-                  ? "bg-primary text-white border-primary"
-                  : "bg-gray-100 text-headtext border-gray-300 hover:bg-gray-200"
+                  ? "bg-primary text-white border-primary rounded-full"
+                  : "bg-gray-100 text-headtext border-gray-300 hover:bg-gray-200 rounded-full"
               }`}
             >
               {cat.title}
@@ -92,8 +100,8 @@ const ProductsPage = () => {
                 onClick={() => setActiveSubcategory(sub.title)}
                 className={`cursor-pointer px-5 py-2 border transition ${
                   activeSubcategory === sub.title
-                    ? "bg-primary text-white border-primary"
-                    : "bg-gray-100 text-headtext border-gray-300 hover:bg-gray-200"
+                    ? "bg-primary text-white border-primary rounded-full"
+                    : "bg-gray-100 text-headtext border-gray-300 hover:bg-gray-200 rounded-full"
                 }`}
               >
                 {sub.title}

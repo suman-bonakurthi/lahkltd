@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Setting Up the Contact Form and Google reCAPTCHA
 
-## Getting Started
+Step 1: Configure Google reCAPTCHA
 
-First, run the development server:
+Open your .env file and add your Google reCAPTCHA Site Key and Secret Key.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Make sure the keys are linked to your website’s URL for them to work properly.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+RESEND_API_KEY=your_resend_api_key_here
+RECAPTCHA_SITE_KEY=your_site_key_here
+RECAPTCHA_SECRET_KEY=your_secret_key_here
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Step 2: Add Your Resend API Key
 
-## Learn More
+Create an account at Resend
+ and get your API key.
 
-To learn more about Next.js, take a look at the following resources:
+Add the API key to your .env file (see above).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Step 3: Configure Email and Logo in route.ts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open app/api/contact/route.ts.
 
-## Deploy on Vercel
+Line 28: Update the to email address to the one you want form submissions to be sent to:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+to: ['your_email@example.com'], // <-- replace with your real email
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Line 46: Replace the logo URL with your website’s full URL. If you don’t, the logo will not appear in the email template:
+
+<img src="https://yourwebsite.com/assets/logo.jpg" alt="Your Logo" />
+
+
+✅ That’s it! After these steps, your contact form will send emails to your chosen address, display your logo correctly, and be protected by Google reCAPTCHA.

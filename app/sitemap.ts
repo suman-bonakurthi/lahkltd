@@ -1,63 +1,66 @@
 // app/sitemap.ts
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date()
+  const now = new Date();
+  const domain =
+    process.env.NEXT_PUBLIC_DOMAIN_NAME || "https://yourwebsite.com";
 
   return [
     {
-      url: 'https://seninsiten.com/', // ana sayfa
+      url: domain, // MAIN PAGE
       lastModified: now,
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: 'https://seninsiten.com/worldwide',
+      url: domain + "/worldwide",
       lastModified: now,
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://seninsiten.com/services',
+      url: domain + "/services",
       lastModified: now,
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://seninsiten.com/why-us',
+      url: domain + "/why-us",
       lastModified: now,
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://seninsiten.com/about-us',
+      url: domain + "about-us",
       lastModified: now,
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://seninsiten.com/products',
+      url: domain + "/products",
       lastModified: now,
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://seninsiten.com/contact-us',
+      url: domain + "/contact-us",
       lastModified: now,
-      changeFrequency: 'yearly',
+      changeFrequency: "yearly",
       priority: 0.5,
     },
     {
-      url: 'https://seninsiten.com/privacy-policy',
+      url: domain + "privacy-policy",
       lastModified: now,
-      changeFrequency: 'yearly',
+      changeFrequency: "yearly",
       priority: 0.4,
     },
     {
-      url: 'https://seninsiten.com/terms-conditions',
+      url: domain + "terms-conditions",
       lastModified: now,
-      changeFrequency: 'yearly',
+      changeFrequency: "yearly",
       priority: 0.4,
     },
-  ]
+  ];
 }

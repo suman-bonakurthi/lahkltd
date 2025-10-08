@@ -21,15 +21,21 @@ export default function CookieBanner() {
   return (
     <div className="fixed bottom-0 left-0 w-full bg-gray-800/80 backdrop-blur-sm text-white p-4 shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-  <p className="text-base text-white flex-1">
-          We use cookies to improve your experience. By using our site, you agree to our{" "}
-          <a href="/privacy-policy" className="underline font-medium text-primary">
+        <p className="text-sm text-white flex-1">
+          We do not use cookies to track or store your data. By clicking
+          ‘Accept‘Accept&rsquo;, you acknowledge and agree that no cookies are
+          being collected, as described in our{" "}
+          <a
+            href="/privacy-policy"
+            className="underline font-medium text-primary"
+          >
             Privacy Policy
-          </a>.
+          </a>
+          .
         </p>
         <button
           onClick={handleAccept}
-          className="bg-primary text-white font-medium px-4 py-2 text-base hover:bg-primary-dark transition"
+          className="bg-primary text-white rounded-full font-medium px-4 py-2 text-base hover:bg-primary-dark transition"
         >
           Accept
         </button>

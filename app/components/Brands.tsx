@@ -10,14 +10,17 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Brands = () => {
-  const logos = Array.from({ length: 9 }, (_, i) => `/assets/brand-${i + 1}.webp`);
+  const logos = Array.from(
+    { length: 9 },
+    (_, i) => `/assets/brand-${i + 1}.webp`
+  );
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-headtext mb-4">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-bodytext mb-4">
             Trusted by Leading Brands
           </h2>
           <p className="text-bodytext text-base max-w-2xl mx-auto leading-relaxed">
@@ -86,7 +89,11 @@ const Brands = () => {
               stroke="currentColor"
               className="w-5 h-5 sm:w-6 sm:h-6 text-primary"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
             </svg>
           </div>
 
@@ -99,7 +106,11 @@ const Brands = () => {
               stroke="currentColor"
               className="w-5 h-5 sm:w-6 sm:h-6 text-primary"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
             </svg>
           </div>
 

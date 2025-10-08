@@ -1,6 +1,6 @@
 // app/privacy/page.tsx  (veya projenin uygun klasörü)
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 
 const PrivacyPolicy = () => {
   return (
@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-secondary text-white py-16 text-center">
             <h1 className="text-3xl sm:text-4xl font-bold">
-              Privacy Policy for L&amp;A Web Services
+              Privacy Policy for L&amp;A Web Site
             </h1>
           </div>
         </div>
@@ -18,55 +18,87 @@ const PrivacyPolicy = () => {
 
       {/* Content Section (no extra bg, default page bg) */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-  <p className="text-base text-headtext mb-8 pt-8"><strong>Last updated: September 26, 2025</strong></p>
+        <p className="text-base text-bodytext mb-8 pt-8">
+          <strong>Last updated: September 26, 2025</strong>
+        </p>
 
         {/* Intro */}
         <section className="mb-12">
-          
-
-          <p className="text-headtext leading-relaxed mb-4">
-            This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
+          <p className="text-bodytext leading-relaxed mb-4">
+            This Privacy Policy describes Our policies and procedures on the
+            collection, use and disclosure of Your information when You use the
+            Service and tells You about Your privacy rights and how the law
+            protects You.
           </p>
 
-          <p className="text-headtext leading-relaxed">
-            We use Your Personal data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this Privacy Policy.
+          <p className="text-bodytext leading-relaxed">
+            We use Your Personal data to provide and improve the Service. By
+            using the Service, you agree to the collection and use of
+            information in accordance with this Privacy Policy.
           </p>
         </section>
 
         {/* Interpretation and Definitions */}
         <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-headtext mb-8">Interpretation and Definitions</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-bodytext mb-8">
+            Interpretation and Definitions
+          </h2>
 
           <div className="mb-8">
-            <h3 className="text-lg sm:text-xl font-semibold text-headtext mb-4">Interpretation</h3>
-            <p className="text-headtext leading-relaxed">
-              The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+            <h3 className="text-lg sm:text-xl font-semibold text-bodytext mb-4">
+              Interpretation
+            </h3>
+            <p className="text-bodytext leading-relaxed">
+              The words of which the initial letter is capitalized have meanings
+              defined under the following conditions. The following definitions
+              shall have the same meaning regardless of whether they appear in
+              singular or in plural.
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg sm:text-xl font-semibold text-headtext mb-4">Definitions</h3>
-            <p className="text-headtext leading-relaxed mb-4">For the purposes of this Privacy Policy:</p>
-            <div className="space-y-4 text-headtext">
+            <h3 className="text-lg sm:text-xl font-semibold text-bodytext mb-4">
+              Definitions
+            </h3>
+            <p className="text-bodytext leading-relaxed mb-4">
+              For the purposes of this Privacy Policy:
+            </p>
+            <div className="space-y-4 text-bodytext">
               <div>
-                <span className="font-bold text-headtext">Company</span>
-                <span> (referred to as either “the Company”, “We”, “Us” or “Our” in this Agreement) refers to L&A Web Services.</span>
+                <span className="font-bold text-bodytext">Company</span>
+                <span>
+                  {" "}
+                  (referred to as either “the Company”, “We”, “Us” or “Our” in
+                  this Agreement) refers to L&A Web Services.
+                </span>
               </div>
               <div>
-                <span className="font-bold text-headtext">You</span>
-                <span> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</span>
+                <span className="font-bold text-bodytext">You</span>
+                <span>
+                  {" "}
+                  means the individual accessing or using the Service, or the
+                  company, or other legal entity on behalf of which such
+                  individual is accessing or using the Service, as applicable.
+                </span>
               </div>
               <div>
-                <span className="font-bold text-headtext">Website</span>
-                <span> refers to L&amp;A Services, accessible from L&amp;A</span>
+                <span className="font-bold text-bodytext">Website</span>
+                <span>
+                  {" "}
+                  refers to L&amp;A Services, accessible from L&amp;A
+                </span>
               </div>
               <div>
-                <span className="font-bold text-headtext">Service</span>
+                <span className="font-bold text-bodytext">Service</span>
                 <span> refers to the Website.</span>
               </div>
               <div>
-                <span className="font-bold text-headtext">Personal Data</span>
-                <span> is any information that relates to an identified or identifiable individual.</span>
+                <span className="font-bold text-bodytext">Personal Data</span>
+                <span>
+                  {" "}
+                  is any information that relates to an identified or
+                  identifiable individual.
+                </span>
               </div>
             </div>
           </div>
@@ -74,14 +106,21 @@ const PrivacyPolicy = () => {
 
         {/* Collecting and Using Your Personal Data */}
         <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-headtext mb-8">Collecting and Using Your Personal Data</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-bodytext mb-8">
+            Collecting and Using Your Personal Data
+          </h2>
 
           <div className="mb-8">
-            <h3 className="text-lg sm:text-xl font-semibold text-headtext mb-4">Types of Data Collected</h3>
-            <p className="text-headtext leading-relaxed mb-4">
-              While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:
+            <h3 className="text-lg sm:text-xl font-semibold text-bodytext mb-4">
+              Types of Data Collected
+            </h3>
+            <p className="text-bodytext leading-relaxed mb-4">
+              While using Our Service, We may ask You to provide Us with certain
+              personally identifiable information that can be used to contact or
+              identify You. Personally identifiable information may include, but
+              is not limited to:
             </p>
-            <div className="space-y-2 ml-4 text-headtext">
+            <div className="space-y-2 ml-4 text-bodytext">
               <div className="flex items-start">
                 <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
                 <span>Email address</span>
@@ -102,24 +141,42 @@ const PrivacyPolicy = () => {
           </div>
 
           <div>
-            <h3 className="text-lg sm:text-xl font-semibold text-headtext mb-4">Use of Your Personal Data</h3>
-            <p className="text-headtext leading-relaxed mb-4">The Company may use Personal Data for the following purposes:</p>
-            <div className="space-y-3 ml-4 text-headtext">
+            <h3 className="text-lg sm:text-xl font-semibold text-bodytext mb-4">
+              Use of Your Personal Data
+            </h3>
+            <p className="text-bodytext leading-relaxed mb-4">
+              The Company may use Personal Data for the following purposes:
+            </p>
+            <div className="space-y-3 ml-4 text-bodytext">
               <div className="flex items-start">
                 <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                <span>To provide and maintain our Service, including to monitor the usage of our Service.</span>
+                <span>
+                  To provide and maintain our Service, including to monitor the
+                  usage of our Service.
+                </span>
               </div>
               <div className="flex items-start">
                 <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                <span>To manage Your Account: to manage Your registration as a user of the Service.</span>
+                <span>
+                  To manage Your Account: to manage Your registration as a user
+                  of the Service.
+                </span>
               </div>
               <div className="flex items-start">
                 <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                <span>For the performance of a contract: the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</span>
+                <span>
+                  For the performance of a contract: the development, compliance
+                  and undertaking of the purchase contract for the products,
+                  items or services You have purchased or of any other contract
+                  with Us through the Service.
+                </span>
               </div>
               <div className="flex items-start">
                 <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                <span>To contact You: To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication.</span>
+                <span>
+                  To contact You: To contact You by email, telephone calls, SMS,
+                  or other equivalent forms of electronic communication.
+                </span>
               </div>
             </div>
           </div>
@@ -127,21 +184,31 @@ const PrivacyPolicy = () => {
 
         {/* Changes to this Privacy Policy */}
         <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-headtext mb-8">Changes to this Privacy Policy</h2>
-          <p className="text-headtext leading-relaxed mb-4">
-            We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
+          <h2 className="text-2xl sm:text-3xl font-bold text-bodytext mb-8">
+            Changes to this Privacy Policy
+          </h2>
+          <p className="text-bodytext leading-relaxed mb-4">
+            We may update Our Privacy Policy from time to time. We will notify
+            You of any changes by posting the new Privacy Policy on this page.
           </p>
-          <p className="text-headtext leading-relaxed">
-            You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+          <p className="text-bodytext leading-relaxed">
+            You are advised to review this Privacy Policy periodically for any
+            changes. Changes to this Privacy Policy are effective when they are
+            posted on this page.
           </p>
         </section>
 
         {/* Contact Us */}
         <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-headtext mb-8">Contact Us</h2>
-          <p className="text-headtext leading-relaxed">
-            If you have any questions about this Privacy Policy, You can contact us:{' '}
-            <a href="#" className="text-primary hover:underline font-medium">click here</a>
+          <h2 className="text-2xl sm:text-3xl font-bold text-bodytext mb-8">
+            Contact Us
+          </h2>
+          <p className="text-bodytext leading-relaxed">
+            If you have any questions about this Privacy Policy, You can contact
+            us:{" "}
+            <a href="#" className="text-primary hover:underline font-medium">
+              click here
+            </a>
           </p>
         </section>
       </div>

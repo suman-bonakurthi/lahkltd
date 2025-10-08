@@ -8,59 +8,59 @@ export default function AboutUs() {
   const features = [
     {
       icon: ShieldCheck,
-      title: "Our Strengths",
-      image: "/assets/our-strength.png",
+      title: "Our Strength",
+      image: "/assets/about-us/our-strength.jpg",
       description:
         "Tailor-Made Solutions: We create customized solutions to match the specific requirements of each client.\n\nReliability: We guarantee quality as per customer specifications, competitive pricing, and on-time delivery through our strong global network.\n\nInternational Expertise: More than 10 years of experience in catering to a diverse range of markets with a strong global footprint.",
     },
     {
       icon: Package,
       title: "Product Portfolio",
-      image: "/assets/commitment.png",
+      image: "/assets/about-us/product-portfolio.jpg",
       description:
-        "Our extensive product range includes:\n\nAll kind of Textiles and Garments\n\nLeather Goods, Belts, Wallets, Hand Bags.\n\nGarment Accessories: Metal Buttons, zippers, interlining & pocketing material, sewing threads, elastics, labels, tags, and many various types of trims\n\nBeverages and General Merchandise, Alcoholic drinks, Beers, Whisky & Brandy",
+        "Our extensive product range includes:\n\nAll kind of Textiles and Garments, Leather Goods, Belts, Wallets, Hand Bags.\n\nGarment Accessories: Metal Buttons, zippers, interlining & pocketing material, sewing threads, elastics, labels, tags, and many various types of trims\n\nBeverages and General Merchandise, Alcoholic drinks, Beers, Whisky & Brandy",
     },
     {
       icon: Zap,
       title: "Quality & Innovation",
-      image: "/assets/quality.png",
+      image: "/assets/about-us/quality-innovation.jpg",
       description:
         "At L&A, quality is at the core of everything we do. We follow a stringent quality assurance policy, adopting modern practices and advanced manufacturing technologies. Our customer-centric approach emphasizes innovation, fashion trend analysis, and continuous improvement, allowing us to deliver solutions that are not only functional but also fashionable and in vogue. This commitment to excellence is reflected in our finished products, characterized by contemporary design, superior craftsmanship, and global appeal.",
     },
     {
       icon: Layers,
       title: "Global Markets",
-      image: "/assets/global.png",
+      image: "/assets/about-us/global-market.jpg",
       description:
         "Our export markets include the USA, UK, Canada, India, and the Middle East, supported by a growing presence in Asia. With our extensive experience and distribution capabilities, we are positioned as a global leader in supplying leather goods, apparel, accessories, and many more.",
     },
     {
       icon: ShieldCheck,
       title: "Our Commitment",
-      image: "/assets/commitment.png",
+      image: "/assets/about-us/our-commitment.jpg",
       description:
         "At L&A Company, we stand for quality, innovation, and reliability. We aim to continually create value for our customers by offering products that enhance competitiveness in an ever-evolving market. L&A Company. A Trusted Name in Leather, Apparel, and Accessories in the Fashion industry.",
     },
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50">
+    <section className="pt-10 pb-16 sm:pb-20 lg:pb-24 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Intro Section */}
         <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-stretch mb-20">
           {/* Text */}
           <div className="space-y-10">
             <div className="border-l-4 border-primary pl-6 space-y-4">
-              <p className="text-bodytext text-base leading-relaxed">
-                <span className="font-semibold text-headtext">
+              <p className="text-bodytext text-base leading-relaxed text-justify">
+                <span className="text-lg sm:text-xl font-bold text-bodytext">
                   L&amp;A Company HK Ltd.
                 </span>{" "}
-                is a global supplier of high-quality{" "}
-                <span className="font-medium text-headtext">
-                  leather goods, apparel, accessories, general merchandise
+                <span className="font-small text-bodytext">
+                  A global supplier of high-quality leather goods, apparel,
+                  accessories, general merchandise and has recently expanded
+                  into beverages
                 </span>{" "}
-                and has recently expanded into{" "}
-                <span className="font-medium text-headtext">beverages</span>.
+                <span className="font-small text-bodytext"></span>.
               </p>
 
               <ul className="space-y-3">
@@ -80,17 +80,12 @@ export default function AboutUs() {
             </div>
 
             <div className="border-t-2 border-gray-200 pt-6 space-y-4">
-              <p className="text-bodytext text-base leading-relaxed">
+              <p className="text-bodytext text-base leading-relaxed text-justify">
                 For over a decade,{" "}
-                <span className="font-semibold text-headtext">L&amp;A</span> has built a
-                reputation as a{" "}
-                <span className="font-medium text-headtext">trusted partner</span> to
-                leading leather and garment manufacturers across{" "}
-                <span className="italic text-headtext">
-                  Central and Eastern Africa, India, Sri Lanka, Vietnam, and the Middle
-                  East
-                </span>
-                .
+                <span className="font-semibold text-bodytext">L&amp;A</span> has
+                built a reputation as a trusted partner to leading leather and
+                garment manufacturers across Central and Eastern Africa, India,
+                Sri Lanka, Vietnam, and the Middle East.
               </p>
 
               <ul className="space-y-3">
@@ -113,7 +108,7 @@ export default function AboutUs() {
           {/* Hero Image */}
           <div className="relative w-full aspect-[16/10] overflow-hidden shadow-xl border-4 border-primary">
             <Image
-              src="/assets/about-us.png"
+              src="/assets/about-us/about-us.jpg"
               alt="About Us"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
@@ -138,7 +133,7 @@ export default function AboutUs() {
                   src={feature.image}
                   alt={feature.title}
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-700"
+                  className="object-cover hover:scale-105 transition-transform duration-700 "
                 />
               </div>
 
@@ -154,13 +149,13 @@ export default function AboutUs() {
                       <feature.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg sm:text-xl font-bold text-headtext">
+                      <h3 className="text-lg sm:text-xl font-bold text-bodytext">
                         {feature.title}
                       </h3>
                       <div className="w-16 h-0.5 bg-primary mt-3"></div>
                     </div>
                   </div>
-                  <div className="text-bodytext text-sm leading-relaxed sm:leading-loose space-y-4">
+                  <div className="text-bodytext text-medium leading-relaxed sm:leading-loose space-y-4 text-justify">
                     {feature.description
                       .split("\n\n")
                       .map((paragraph, pIndex) => (
