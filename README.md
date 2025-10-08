@@ -1,35 +1,49 @@
-Setting Up the Contact Form and Google reCAPTCHA
+<div align="center">
+  <a href="https://nextjs.org">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_dark_background.png">
+      <img alt="Next.js logo" src="https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_light_background.png" height="128">
+    </picture>
+  </a>
+  <h1>Next.js</h1>
 
-Step 1: Configure Google reCAPTCHA
+<a href="https://vercel.com"><img alt="Vercel logo" src="https://img.shields.io/badge/MADE%20BY%20Vercel-000000.svg?style=for-the-badge&logo=Vercel&labelColor=000"></a>
+<a href="https://www.npmjs.com/package/next"><img alt="NPM version" src="https://img.shields.io/npm/v/next.svg?style=for-the-badge&labelColor=000000"></a>
+<a href="https://github.com/vercel/next.js/blob/canary/license.md"><img alt="License" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&labelColor=000000"></a>
+<a href="https://github.com/vercel/next.js/discussions"><img alt="Join the community on GitHub" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&logo=Next.js&labelColor=000000&logoWidth=20"></a>
 
-Open your .env file and add your Google reCAPTCHA Site Key and Secret Key.
+</div>
 
-Make sure the keys are linked to your website’s URL for them to work properly.
+## Getting Started
 
-RESEND_API_KEY=your_resend_api_key_here
-RECAPTCHA_SITE_KEY=your_site_key_here
-RECAPTCHA_SECRET_KEY=your_secret_key_here
+Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds.
 
+- Visit our [Learn Next.js](https://nextjs.org/learn) course to get started with Next.js.
+- Visit the [Next.js Showcase](https://nextjs.org/showcase) to see more sites built with Next.js.
 
-Step 2: Add Your Resend API Key
+## Documentation
 
-Create an account at Resend
- and get your API key.
+Visit [https://nextjs.org/docs](https://nextjs.org/docs) to view the full documentation.
 
-Add the API key to your .env file (see above).
+## Community
 
-Step 3: Configure Email and Logo in route.ts
+The Next.js community can be found on [GitHub Discussions](https://github.com/vercel/next.js/discussions) where you can ask questions, voice ideas, and share your projects with other people.
 
-Open app/api/contact/route.ts.
+To chat with other community members you can join the Next.js [Discord](https://nextjs.org/discord) server.
 
-Line 28: Update the to email address to the one you want form submissions to be sent to:
+Do note that our [Code of Conduct](https://github.com/vercel/next.js/blob/canary/CODE_OF_CONDUCT.md) applies to all Next.js community channels. Users are **highly encouraged** to read and adhere to it to avoid repercussions.
 
-to: ['your_email@example.com'], // <-- replace with your real email
+## Contributing
 
+Contributions to Next.js are welcome and highly appreciated. However, before you jump right into it, we would like you to review our [Contribution Guidelines](/contributing.md) to make sure you have a smooth experience contributing to Next.js.
 
-Line 46: Replace the logo URL with your website’s full URL. If you don’t, the logo will not appear in the email template:
+### Good First Issues:
 
-<img src="https://yourwebsite.com/assets/logo.jpg" alt="Your Logo" />
+We have a list of **[good first issues](https://github.com/vercel/next.js/labels/%22good%20first%20issue%22)** that contain bugs that have a relatively limited scope. This is a great place for newcomers and beginners alike to get started, gain experience, and get familiar with our contribution process.
 
+---
+## Security
 
-✅ That’s it! After these steps, your contact form will send emails to your chosen address, display your logo correctly, and be protected by Google reCAPTCHA.
+If you believe you have found a security vulnerability in Next.js, we encourage you to **_responsibly disclose this and NOT open a public issue_**.
+
+To participate in our Open Source Software Bug Bounty program, please email [responsible.disclosure@vercel.com](mailto:responsible.disclosure@vercel.com). We will add you to the program and provide further instructions for submitting your report.
